@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class playerMovement : MonoBehaviour
 {
     //Components 
     public Rigidbody rb; // grabs Rigidbody component from object 
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         // Add a dash 
     }
 
-    private void OnTriggerEnter(Collider collision) // detects collision
+    private void OnCollisionEnter(Collision collision) // detects collision
     {
         if(collision.gameObject.tag == "Ground") // if player comes into contact with a objects 
         {
@@ -60,8 +60,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider collison) // if object does not collide with ground tag stops character from jumping 
+    private void OnCollisionExit(Collision collison) // if object does not collide with ground tag stops character from jumping 
     {
-        isGrounded = false;
+        isGrounded = false; 
     }
 }

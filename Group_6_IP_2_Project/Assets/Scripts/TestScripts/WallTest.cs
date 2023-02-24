@@ -44,6 +44,8 @@ public class WallTest : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // For removeal of block while maintaining velocity switch  to trigger rather than collider. add extra inactive colider activated when health drops    
     }
 
     public void LooseHealth()

@@ -7,14 +7,15 @@ public class CollisionTest : MonoBehaviour
 {
 
     Rigidbody rb;
-    float thrustfw = 1000;
-    float thrustbk = 500;
+    //float thrustfw = 1000;
+    //float thrustbk = 500;
 
+    // explosion values 
     float radius = 20f;
     float force = -1500f;
     public GameObject explotion;
 
-    public float x;
+    [SerializeField] float x;
 
     void Start()
     {
@@ -25,15 +26,15 @@ public class CollisionTest : MonoBehaviour
     {
         x = rb.velocity.x;
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            rb.AddForce(transform.right * thrustfw);
-        }
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    rb.AddForce(transform.right * thrustfw);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            rb.AddForce(-transform.right * thrustbk);
-        }
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    rb.AddForce(-transform.right * thrustbk);
+        //}
 
         if (Input.GetKeyDown(KeyCode.S)) 
         {
@@ -43,7 +44,7 @@ public class CollisionTest : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (x < -40 && col.gameObject.tag == "TestTag")
+        if (x < -20 && col.gameObject.tag == "TestTag" || x > 20 && col.gameObject.tag == "TestTag")
         {
             WallTest wt = col.gameObject.GetComponent<WallTest>();
 
