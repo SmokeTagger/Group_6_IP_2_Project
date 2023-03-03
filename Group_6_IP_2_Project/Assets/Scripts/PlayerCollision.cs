@@ -10,7 +10,7 @@ public class PlayerCollision : MonoBehaviour
     //float thrustbk = 500;
 
     // explosion values 
-    float radius = 20f;
+    float radius = 5f;
     float force = -1500f;
     public GameObject explotion;
 
@@ -51,6 +51,12 @@ public class PlayerCollision : MonoBehaviour
             {
                 wd.LooseHealth();
             }
+
+            MultipartDestruction md = col.gameObject.GetComponent<MultipartDestruction>();
+            if (md != null)
+            {
+                md.LooseHealth();
+            }
         }
     }
 
@@ -58,10 +64,16 @@ public class PlayerCollision : MonoBehaviour
     {
         if (x < -20 && col.gameObject.tag == "Destructable" || x > 20 && col.gameObject.tag == "Destructable")
         {
-            WallDestruction wd = col.gameObject.transform.parent.gameObject.GetComponent<WallDestruction>();
+            WallDestruction wd = col.gameObject.transform.parent.gameObject.GetComponent<WallDestruction>(); // TIDY THIS SHIT UP
             if (wd != null)
             {
                 wd.LooseHealth();
+            }
+
+            MultipartDestruction md = col.gameObject.transform.parent.gameObject.GetComponent<MultipartDestruction>();
+            if(md != null)
+            {
+                md.LooseHealth();
             }
 
         }
@@ -85,6 +97,8 @@ public class PlayerCollision : MonoBehaviour
 
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
                 WallDestruction wd = hit.GetComponent<WallDestruction>();
+                MultipartDestruction md = hit.GetComponent<MultipartDestruction>();
+
                 if (rb != null)
                 {
                     rb.AddExplosionForce(force, transform.position, radius);
@@ -93,6 +107,11 @@ public class PlayerCollision : MonoBehaviour
                 if (wd != null)
                 {
                     wd.LooseHealth();
+                }
+
+                if (md != null)
+                {
+                    md.LooseHealth();
                 }
             }
 

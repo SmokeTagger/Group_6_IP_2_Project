@@ -5,10 +5,15 @@ using UnityEngine;
 public class WallDestruction : MonoBehaviour
 {
     [SerializeField] int health = 3;
-    Color colour1 = Color.green;
-    Color colour2 = Color.yellow;
-    Color colour3 = Color.red;
-    float duration = 1.0f;
+
+
+    public Material dmg1;
+    public Material dmg2;
+    public Material dmg3;
+
+
+    // float duration = 1.0f;
+
     Renderer rend;
     Rigidbody rb;
     public GameObject trigger;
@@ -23,21 +28,22 @@ public class WallDestruction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float lerp = Mathf.PingPong(Time.time, duration) / duration;
+        //float lerp = Mathf.PingPong(Time.time, duration) / duration;
 
         if (health == 3) //set the colour of the object at the start
         {
-            rend.material.color = colour1;
+            rend.material = dmg1;
         }
 
         if (health == 2) //alternates the colour btween geen and yellow when health has droped
         {
-            rend.material.color = Color.Lerp(colour1, colour2, lerp);
+            rend.material = dmg2;
+
         }
 
         if (health == 1) //alternates the colour betweeen yellow and red when on last health point
         {
-            rend.material.color = Color.Lerp(colour2, colour3, lerp);
+            rend.material = dmg3;
             trigger.SetActive(true);
         }
 
