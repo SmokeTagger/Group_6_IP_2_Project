@@ -10,7 +10,8 @@ TagManager:
   - AudioManagerTag
   - Enviroment
   - Spawner
-  - TestTag
+  - Ground
+  - Destructable
   layers:
   - Default
   - TransparentFX
