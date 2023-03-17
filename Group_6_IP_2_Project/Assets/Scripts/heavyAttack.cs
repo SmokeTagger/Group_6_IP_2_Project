@@ -5,19 +5,20 @@ using UnityEngine;
 public class heavyAttack : MonoBehaviour
 {
     [SerializeField]float force;
-    public GameObject player;
+    public GameObject trigger;
 
     private void Update()
     {
-        if (player.transform.eulerAngles.y == 0)
-        {
-            force = -80f;
-        }
-        else if (player.transform.eulerAngles.y == -180)
+        if(trigger.active)
         {
             force = 80f;
         }
+        if (!trigger.active)
+        {
+            force = -80f;
+        }
     }
+
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Destructable")
@@ -29,6 +30,8 @@ public class heavyAttack : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             col.gameObject.GetComponent<Rigidbody>().AddForce(20 * force, 0, 0);
+            playerHealth ph = col.gameObject.GetComponent<playerHealth>();
+            ph.healthhvy();
         }
     }
 }

@@ -8,7 +8,7 @@ public class playerMovement : MonoBehaviour
     public Rigidbody rb; // grabs Rigidbody component from object 
 
     //Movement
-    private float moveSpeed; 
+    private float moveSpeed;
 
     //Jumping
     private float jumpForce;
@@ -22,17 +22,25 @@ public class playerMovement : MonoBehaviour
     public GameObject Latk;
     public GameObject Hatk;
 
+    // direction booland trigger object
+    [SerializeField] bool facing = true;
+    public GameObject trigger;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
         moveSpeed = 0.75f;
-        jumpForce = 5.5f;
+        jumpForce = 10.5f;
         isGrounded = true;
     }
 
-    // Update is called once per frame
+    // A and D left right movement 
+    // S change direction
+    // W Jump
+    // R light attack
+    // F heavy Attack
     void Update()
     {
         moveHorizontal = Input.GetAxisRaw("Horizontal"); // Sets input variables for horizontal and Vertical
@@ -51,6 +59,17 @@ public class playerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.S))
         {
             transform.Rotate(Vector3.up * 180);
+            facing = !facing;
+        }
+
+        if (facing)
+        {
+            trigger.SetActive(true);
+        }
+
+        if (!facing)
+        {
+            trigger.SetActive(false);
         }
     }
 
