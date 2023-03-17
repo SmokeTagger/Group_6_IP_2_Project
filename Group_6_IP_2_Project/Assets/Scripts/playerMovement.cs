@@ -18,6 +18,10 @@ public class playerMovement : MonoBehaviour
     private float moveHorizontal;
     private float moveVertical;
 
+    //Attacks
+    public GameObject Latk;
+    public GameObject Hatk;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,21 @@ public class playerMovement : MonoBehaviour
     {
         moveHorizontal = Input.GetAxisRaw("Horizontal"); // Sets input variables for horizontal and Vertical
         moveVertical = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            lightAttack();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            heavyAttack();
+        }
+
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            transform.Rotate(Vector3.up * 180);
+        }
     }
 
     void FixedUpdate()
@@ -63,5 +82,31 @@ public class playerMovement : MonoBehaviour
     private void OnCollisionExit(Collision collison) // if object does not collide with ground tag stops character from jumping 
     {
         isGrounded = false; 
+    }
+
+    private void lightAttack()
+    {
+        StartCoroutine(lAttack());
+    }
+
+    private void heavyAttack()
+    {
+        StartCoroutine(hAttack());
+    }
+
+    private IEnumerator lAttack()
+    {
+        Latk.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        Latk.SetActive(false);
+    }
+
+    private IEnumerator hAttack()
+    {
+        yield return new WaitForSeconds(0.3f);
+        Hatk.SetActive(true);
+        yield return new WaitForSeconds(0.1f); 
+        Hatk.SetActive(false);
+
     }
 }

@@ -35,10 +35,10 @@ public class PlayerCollision : MonoBehaviour
         //    rb.AddForce(-transform.right * thrustbk);
         //}
 
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            Wrapper();
-        }
+       if (Input.GetKeyDown(KeyCode.E))
+       {
+           Wrapper();
+       }
     }
 
     private void OnCollisionEnter(Collision col)
