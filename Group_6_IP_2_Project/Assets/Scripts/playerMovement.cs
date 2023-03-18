@@ -15,48 +15,58 @@ public class playerMovement : MonoBehaviour
     public bool isGrounded; // checks to see if the object is grounded on the floor 
 
     //Direction
-    private float moveHorizontal;
-    private float moveVertical;
+    public KeyCode left; // These are used to set the controls for the character in the inspector 
+    public KeyCode right;
+    public KeyCode jump;
+    //private float moveHorizontal;
+    //private float moveVertical;
 
     //Attacks
     public GameObject Latk;
     public GameObject Hatk;
 
+    //Attack Inputs
+    public KeyCode light;
+    public KeyCode heavy;
+
     // direction booland trigger object
     [SerializeField] bool facing = true;
     public GameObject trigger;
+
+    //Turn round Key input
+    public KeyCode turn;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
-        moveSpeed = 0.75f;
-        jumpForce = 10.5f;
+        moveSpeed = 0.95f;
+        jumpForce = 18.5f;
         isGrounded = true;
     }
 
     // A and D left right movement 
     // S change direction
     // W Jump
-    // R light attack
-    // F heavy Attack
+    // H light attack
+    // J heavy Attack
     void Update()
     {
-        moveHorizontal = Input.GetAxisRaw("Horizontal"); // Sets input variables for horizontal and Vertical
-        moveVertical = Input.GetAxisRaw("Vertical");
+        //moveHorizontal = Input.GetAxisRaw("Horizontal"); // Sets input variables for horizontal and Vertical
+        //moveVertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKey(light))
         {
-            lightAttack();
+            lightAttack(); 
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKey(heavy))
         {
             heavyAttack();
         }
 
-        if(Input.GetKeyDown(KeyCode.S))
+        if(Input.GetKey(turn))
         {
             transform.Rotate(Vector3.up * 180);
             facing = !facing;
@@ -75,14 +85,19 @@ public class playerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (moveHorizontal > 0.1f || moveHorizontal < -0.1f) // if button or joystick are used if the interaction is greater than 0.1 or -0,1
+        if (Input.GetKey(left))
         {
-            rb.AddForce(new Vector2(moveHorizontal * moveSpeed, 0f), ForceMode.Impulse); // applies a force to the direction of the button pressed or joystick moved 
+            rb.AddForce(new Vector2(/*moveHorizontal **/ -moveSpeed, 0f), ForceMode.Impulse); // applies a force to the direction of the button pressed or joystick moved 
         }
 
-        if (isGrounded && moveVertical > 0.1f )
+        if (Input.GetKey(right))
         {
-            rb.AddForce(new Vector2(0f, moveVertical * jumpForce), ForceMode.Impulse); // adds upwards force 
+            rb.AddForce(new Vector2(/*moveHorizontal **/ moveSpeed, 0f), ForceMode.Impulse); // applies a force to the direction of the button pressed or joystick moved 
+        }
+
+        if (isGrounded && Input.GetKey(jump))
+        {
+            rb.AddForce(new Vector2(0f,/* moveVertical **/ jumpForce), ForceMode.Impulse); // adds upwards force 
         }
 
         // Add a wall slide and wall jump 
