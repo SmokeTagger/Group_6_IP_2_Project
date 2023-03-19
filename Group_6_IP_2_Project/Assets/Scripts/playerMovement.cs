@@ -56,17 +56,17 @@ public class playerMovement : MonoBehaviour
         //moveHorizontal = Input.GetAxisRaw("Horizontal"); // Sets input variables for horizontal and Vertical
         //moveVertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(light))
+        if (Input.GetKeyDown(light))
         {
             lightAttack(); 
         }
 
-        if (Input.GetKey(heavy))
+        if (Input.GetKeyDown(heavy))
         {
             heavyAttack();
         }
 
-        if(Input.GetKey(turn))
+        if(Input.GetKeyDown(turn))
         {
             transform.Rotate(Vector3.up * 180);
             facing = !facing;
