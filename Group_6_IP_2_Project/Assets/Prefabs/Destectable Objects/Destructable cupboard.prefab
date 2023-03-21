@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  dmg1: {fileID: 2100000, guid: 1a38a7d9b4afc6f469998d797aec26e4, type: 2}
-  dmg2: {fileID: 2100000, guid: d007e53f9a8ce0f43a8a1bf5a872113c, type: 2}
+  dmg1: {fileID: 2100000, guid: d007e53f9a8ce0f43a8a1bf5a872113c, type: 2}
+  dmg2: {fileID: 2100000, guid: a62a26283fa7e9e47a312b7d9f0169c5, type: 2}
   dmg3: {fileID: 2100000, guid: bfa0e416b6857774eae60a76bf7118a0, type: 2}
   trigger: {fileID: 8262418002202850104}

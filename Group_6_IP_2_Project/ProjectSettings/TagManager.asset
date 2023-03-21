@@ -12,6 +12,7 @@ TagManager:
   - Spawner
   - Ground
   - Destructable
+  - Grenade
   layers:
   - Default
   - TransparentFX

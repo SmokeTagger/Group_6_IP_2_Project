@@ -30,11 +30,20 @@ public class playerMovement : MonoBehaviour
     public KeyCode heavy;
 
     // direction booland trigger object
-    [SerializeField] bool facing = true;
+    public bool facing;
     public GameObject trigger;
 
     //Turn round Key input
     public KeyCode turn;
+
+    // pickup tag and Input
+    public bool grenade = false;
+    public KeyCode throwable;
+
+    // Throwable Variables
+    public GameObject spawner;
+    public GameObject grenadethrowble;
+    float thrust = -1000;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +79,15 @@ public class playerMovement : MonoBehaviour
         {
             transform.Rotate(Vector3.up * 180);
             facing = !facing;
+        }
+
+        if (Input.GetKeyDown(throwable)) 
+        {
+            if (grenade) 
+            {
+                throwGrenade();
+                grenade = false;
+            }
         }
 
         if (facing)
@@ -142,5 +160,13 @@ public class playerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.1f); 
         Hatk.SetActive(false);
 
+    }
+
+    public void throwGrenade() // function to spawn a grnade and throw it
+    {
+
+        var rocket = Instantiate(grenadethrowble, new Vector3(spawner.transform.position.x, spawner.transform.position.y, spawner.transform.position.z), transform.rotation); //sets the spawn location to the rocket spawner
+
+        rocket.GetComponent<Rigidbody>().AddRelativeForce(Vector3.left * thrust); //adds force to the rockets ridgid body
     }
 }
