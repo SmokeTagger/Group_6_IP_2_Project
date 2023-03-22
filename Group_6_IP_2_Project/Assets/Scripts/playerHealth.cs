@@ -24,4 +24,9 @@ public class playerHealth : MonoBehaviour
     {
         health -= 30;
     }
+
+    public void healthdown()
+    {
+        health -= 20;
+    }
 }

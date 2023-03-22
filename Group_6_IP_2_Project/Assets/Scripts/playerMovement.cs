@@ -24,10 +24,15 @@ public class playerMovement : MonoBehaviour
     //Attacks
     public GameObject Latk;
     public GameObject Hatk;
+    public GameObject Datk;
 
     //Attack Inputs
     public KeyCode light;
     public KeyCode heavy;
+    public KeyCode down;
+
+    //Attack Forces 
+    private float datkForce; // Force applied to character when using downwards swing 
 
     // direction booland trigger object
     public bool facing;
@@ -53,6 +58,7 @@ public class playerMovement : MonoBehaviour
         moveSpeed = 0.95f;
         jumpForce = 18.5f;
         isGrounded = true;
+        datkForce = 50f;
     }
 
     // A and D left right movement 
@@ -62,6 +68,7 @@ public class playerMovement : MonoBehaviour
     // J heavy Attack
     void Update()
     {
+        // Old Code 
         //moveHorizontal = Input.GetAxisRaw("Horizontal"); // Sets input variables for horizontal and Vertical
         //moveVertical = Input.GetAxisRaw("Vertical");
 
@@ -73,6 +80,11 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKeyDown(heavy))
         {
             heavyAttack();
+        }
+
+        if(Input.GetKeyDown(down))
+        {
+            downAttack();
         }
 
         if(Input.GetKeyDown(turn))
@@ -146,6 +158,11 @@ public class playerMovement : MonoBehaviour
         StartCoroutine(hAttack());
     }
 
+    private void downAttack()
+    {
+        StartCoroutine(dAttack());
+    }
+
     private IEnumerator lAttack()
     {
         Latk.SetActive(true);
@@ -159,6 +176,19 @@ public class playerMovement : MonoBehaviour
         Hatk.SetActive(true);
         yield return new WaitForSeconds(0.1f); 
         Hatk.SetActive(false);
+
+    }
+
+    private IEnumerator dAttack()
+    {
+        if(isGrounded == false)
+        {
+            yield return new WaitForSeconds(0.2f);
+            rb.AddForce(new Vector2(0f, -datkForce), ForceMode.Impulse);
+            Datk.SetActive(true);
+            yield return new WaitForSeconds(0.2f);
+            Datk.SetActive(false);
+        }
 
     }
 
