@@ -163,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   dmg1: {fileID: 2100000, guid: d007e53f9a8ce0f43a8a1bf5a872113c, type: 2}
-  dmg2: {fileID: 2100000, guid: 1a6c7809b066dac4887d13dd67ac7a2b, type: 2}
+  dmg2: {fileID: 2100000, guid: bfa0e416b6857774eae60a76bf7118a0, type: 2}
   dmg3: {fileID: 0}
   part1: {fileID: 8423796695191133056}
   part2: {fileID: 1576331332064466937}
