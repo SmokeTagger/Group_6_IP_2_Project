@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class downAttack : MonoBehaviour
 {
-    [SerializeField] float force;
+    [SerializeField] float force = -65;
     public GameObject trigger;
 
-    private void Update()
-    {
-
-        if (trigger.active)
-        {
-            force = 65f;
-        }
-        if (!trigger.active)
-        {
-            force = -65f;
-        }
-    }
+    //private void Update()
+    //{
+    //
+    //    if (trigger.active)
+    //    {
+    //        force = 65f;
+    //    }
+    //    if (!trigger.active)
+    //    {
+    //        force = -65f;
+    //    }
+    //}
 
     private void OnCollisionEnter(Collision col)
     {

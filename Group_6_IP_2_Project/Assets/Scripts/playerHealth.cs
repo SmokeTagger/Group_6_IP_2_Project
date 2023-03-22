@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class playerHealth : MonoBehaviour
 {
     [SerializeField] int health = 200;
+    public TextMeshProUGUI healthmeter;
+    public GameObject player;
+
+    void Start()
+    {
+        healthmeter.text = player.name + " Health : " + health;
+    }
 
     private void Update()
     {
@@ -17,12 +25,14 @@ public class playerHealth : MonoBehaviour
     public void healthlite()
     {
         health -= 10;
+        healthmeter.text = player.name + " Health : " + health;
     } 
 
     public void healthhvy()
 
     {
         health -= 30;
+        healthmeter.text = player.name + " Health : " + health;
     }
 
     public void healthdown()

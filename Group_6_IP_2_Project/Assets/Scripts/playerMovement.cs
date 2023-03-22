@@ -34,6 +34,8 @@ public class playerMovement : MonoBehaviour
     //Attack Forces 
     private float datkForce; // Force applied to character when using downwards swing 
 
+    [SerializeField] private bool canAttack = true;
+
     // direction booland trigger object
     public bool facing;
     public GameObject trigger;
@@ -56,8 +58,8 @@ public class playerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         moveSpeed = 0.95f;
-        jumpForce = 18.5f;
-        isGrounded = true;
+        jumpForce = 10f;
+        isGrounded = false;
         datkForce = 50f;
     }
 
@@ -72,17 +74,17 @@ public class playerMovement : MonoBehaviour
         //moveHorizontal = Input.GetAxisRaw("Horizontal"); // Sets input variables for horizontal and Vertical
         //moveVertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(light))
+        if (Input.GetKeyDown(light) && canAttack)
         {
             lightAttack(); 
         }
 
-        if (Input.GetKeyDown(heavy))
+        if (Input.GetKeyDown(heavy) && canAttack)
         {
             heavyAttack();
         }
 
-        if(Input.GetKeyDown(down))
+        if(Input.GetKeyDown(down) && canAttack)
         {
             downAttack();
         }
@@ -135,7 +137,7 @@ public class playerMovement : MonoBehaviour
         // Add a dash 
     }
 
-    private void OnCollisionEnter(Collision collision) // detects collision
+   private void OnCollisionEnter(Collision collision) // detects collision
     {
         if(collision.gameObject.tag == "Ground") // if player comes into contact with a objects 
         {
@@ -145,7 +147,10 @@ public class playerMovement : MonoBehaviour
 
     private void OnCollisionExit(Collision collison) // if object does not collide with ground tag stops character from jumping 
     {
-        isGrounded = false; 
+        if (collison.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+        }
     }
 
     private void lightAttack()
@@ -156,6 +161,7 @@ public class playerMovement : MonoBehaviour
     private void heavyAttack()
     {
         StartCoroutine(hAttack());
+
     }
 
     private void downAttack()
@@ -165,17 +171,23 @@ public class playerMovement : MonoBehaviour
 
     private IEnumerator lAttack()
     {
+        canAttack = false;
         Latk.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         Latk.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        canAttack = true;
     }
 
     private IEnumerator hAttack()
     {
+        canAttack = false;
         yield return new WaitForSeconds(0.3f);
         Hatk.SetActive(true);
         yield return new WaitForSeconds(0.1f); 
         Hatk.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        canAttack = true;
 
     }
 
@@ -183,20 +195,28 @@ public class playerMovement : MonoBehaviour
     {
         if(isGrounded == false)
         {
+            canAttack = false;
             yield return new WaitForSeconds(0.2f);
             rb.AddForce(new Vector2(0f, -datkForce), ForceMode.Impulse);
             Datk.SetActive(true);
             yield return new WaitForSeconds(0.2f);
             Datk.SetActive(false);
+            yield return new WaitForSeconds(0.2f);
+            canAttack = true;
         }
 
+    }
+
+    private IEnumerator coolDown() 
+    {
+        yield return new WaitForSeconds(0.5f);
     }
 
     public void throwGrenade() // function to spawn a grnade and throw it
     {
 
-        var rocket = Instantiate(grenadethrowble, new Vector3(spawner.transform.position.x, spawner.transform.position.y, spawner.transform.position.z), transform.rotation); //sets the spawn location to the rocket spawner
+        var grenade = Instantiate(grenadethrowble, new Vector3(spawner.transform.position.x, spawner.transform.position.y, spawner.transform.position.z), transform.rotation); //sets the spawn location to the rocket spawner
 
-        rocket.GetComponent<Rigidbody>().AddRelativeForce(Vector3.left * thrust); //adds force to the rockets ridgid body
+        grenade.GetComponent<Rigidbody>().AddRelativeForce(Vector3.left * thrust); //adds force to the rockets ridgid body
     }
 }

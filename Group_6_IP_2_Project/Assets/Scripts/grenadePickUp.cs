@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class grenadePickUp : MonoBehaviour
 {
+    public GameObject spawner;
+    public GameObject pickup;
+
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision col)
     {
@@ -11,6 +14,8 @@ public class grenadePickUp : MonoBehaviour
         {
             playerMovement pm = col.gameObject.GetComponent<playerMovement>();
             pm.grenade = true;
+            pickupSpawner ps = spawner.GetComponent<pickupSpawner>();
+            ps.spawns.Remove(pickup);
             Destroy(gameObject);
         }
     }
