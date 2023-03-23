@@ -25,11 +25,13 @@ public class playerMovement : MonoBehaviour
     public GameObject Latk;
     public GameObject Hatk;
     public GameObject Datk;
+    public GameObject Satk;
 
     //Attack Inputs
     public KeyCode light;
     public KeyCode heavy;
     public KeyCode down;
+    public KeyCode super;
 
     //Attack Forces 
     private float datkForce; // Force applied to character when using downwards swing 
@@ -89,7 +91,12 @@ public class playerMovement : MonoBehaviour
             downAttack();
         }
 
-        if(Input.GetKeyDown(turn))
+        if (Input.GetKeyDown(super))
+        {
+            SuperAttack();
+        }
+
+        if (Input.GetKeyDown(turn))
         {
             transform.Rotate(Vector3.up * 180);
             facing = !facing;
@@ -169,6 +176,11 @@ public class playerMovement : MonoBehaviour
         StartCoroutine(dAttack());
     }
 
+    private void SuperAttack()
+    {
+        StartCoroutine(sAttack());
+    }
+
     private IEnumerator lAttack()
     {
         canAttack = false;
@@ -201,6 +213,23 @@ public class playerMovement : MonoBehaviour
             Datk.SetActive(true);
             yield return new WaitForSeconds(0.2f);
             Datk.SetActive(false);
+            yield return new WaitForSeconds(0.2f);
+            canAttack = true;
+        }
+
+    }
+
+    private IEnumerator sAttack()
+    {
+        playerEnergy pe = GetComponent<playerEnergy>();
+        if (pe.activeSuper == true)
+        {
+            canAttack = false;
+            yield return new WaitForSeconds(0.5f);
+            Satk.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Satk.SetActive(false);
+            pe.EnergyReset();
             yield return new WaitForSeconds(0.2f);
             canAttack = true;
         }

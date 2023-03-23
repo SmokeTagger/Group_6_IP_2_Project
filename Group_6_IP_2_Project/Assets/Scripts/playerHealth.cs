@@ -38,5 +38,12 @@ public class playerHealth : MonoBehaviour
     public void healthdown()
     {
         health -= 20;
+        healthmeter.text = player.name + " Health : " + health;
+    }
+
+    public void healthSuper()
+    {
+        health -= 50;
+        healthmeter.text = player.name + " Health : " + health;
     }
 }

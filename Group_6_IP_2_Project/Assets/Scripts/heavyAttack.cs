@@ -33,6 +33,9 @@ public class heavyAttack : MonoBehaviour
             col.gameObject.GetComponent<Rigidbody>().AddForce(20 * force, 0, 0);
             playerHealth ph = col.gameObject.GetComponent<playerHealth>();
             ph.healthhvy();
+            playerEnergy pe = self.GetComponent<playerEnergy>();
+            pe.Energyhvy();
+
         }
     }
 }
