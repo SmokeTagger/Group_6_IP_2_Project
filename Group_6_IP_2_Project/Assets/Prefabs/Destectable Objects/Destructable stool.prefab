@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7225802657627202338}
   m_Layer: 0
   m_Name: Destructable stool
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,15 +28,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3682153170361540409}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -124.7213, y: 11.216783, z: -76.440216}
-  m_LocalScale: {x: 32.36257, y: 6.4753675, z: 32.36257}
+  m_LocalScale: {x: 57.468155, y: 11.498697, z: 57.468155}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2061726615234013096}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &6023158142654222519
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 105
+  controlID: 16
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 360
     height: 658
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -399,9 +399,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 5ef7ffff08faffffb25c0000385d0000da5d0000
+      m_SelectedIDs: f689ffff
+      m_LastClickedID: -30218
+      m_ExpandedIDs: f689ffff00ebffff4eebffff4ceffffffaf1ffff52f2ffffd0f3ffff36fbffff568000000e8300000e870000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -417,7 +417,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 8}
+        m_ClientGUIView: {fileID: 9}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -650,9 +650,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -6.691087, y: -26.832191, z: 76.48}
+    m_Target: {x: 5.6601276, y: -3.730713, z: 87.87211}
     speed: 2
-    m_Value: {x: -6.691087, y: -26.832191, z: 76.48}
+    m_Value: {x: 5.6601276, y: -3.730713, z: 87.87211}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -699,13 +699,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.17039476, y: 0.03581963, z: -0.006547501, w: -0.9849676}
+    m_Target: {x: -0.12154364, y: -0.002613261, z: -0.000027095739, w: -0.99284583}
     speed: 2
-    m_Value: {x: -0.17182723, y: 0.035800427, z: -0.006599558, w: -0.9844542}
+    m_Value: {x: -0.1215119, y: -0.0026125787, z: -0.000027088663, w: -0.99258655}
   m_Size:
-    m_Target: 75.86398
+    m_Target: 76.09139
     speed: 2
-    m_Value: 75.86398
+    m_Value: 72.81473
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -771,22 +771,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets/Prefabs/PickUps
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets/Prefabs/PickUps
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Jonesy\Documents\GitHub\Group_6_IP_2_Project\Group_6_IP_2_Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 28}
-    m_SelectedIDs: d8670000
-    m_LastClickedID: 26584
-    m_ExpandedIDs: 00000000c0670000c4670000c6670000c8670000f66700008269000000ca9a3b
+    m_SelectedIDs: ce660000
+    m_LastClickedID: 26318
+    m_ExpandedIDs: 00000000b0660000b2660000b4660000b6660000b8660000ba66000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -814,7 +814,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c0670000c2670000c4670000c6670000c8670000
+    m_ExpandedIDs: 00000000b0660000b2660000b4660000b6660000b8660000ba660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -891,9 +891,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 575.2
-    width: 1172.6
-    height: 200.19998
+    y: 731
+    width: 1466
+    height: 268
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default

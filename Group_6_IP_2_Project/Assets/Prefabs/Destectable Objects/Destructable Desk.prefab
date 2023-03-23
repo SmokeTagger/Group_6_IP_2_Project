@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 5062687467347960586}
   m_Layer: 0
   m_Name: Destructable Desk
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,15 +73,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5549897037459410639}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -111.80337, y: 10.696313, z: -72.38684}
-  m_LocalScale: {x: 16.327, y: 16.327, z: 16.327}
+  m_LocalScale: {x: 36.097366, y: 36.097366, z: 36.097366}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8633663952946859275}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &2359821289657258651
 MeshFilter:
   m_ObjectHideFlags: 0
