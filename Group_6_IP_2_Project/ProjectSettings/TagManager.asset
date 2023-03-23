@@ -13,6 +13,7 @@ TagManager:
   - Ground
   - Destructable
   - Grenade
+  - MultiDestruction
   layers:
   - Default
   - TransparentFX
