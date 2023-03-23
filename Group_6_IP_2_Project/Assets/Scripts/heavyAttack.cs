@@ -2,23 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lightAttack : MonoBehaviour
+public class heavyAttack : MonoBehaviour
 {
-    [SerializeField] float force ;
+    [SerializeField] float force = -1600;
     public GameObject trigger;
     public GameObject self;
 
-
     private void Update()
     {
-        
-        if (trigger.activeInHierarchy)
+        if(trigger.activeInHierarchy)
         {
-            force = 40f;
+            force = 80f;
         }
         if (!trigger.activeInHierarchy)
         {
-            force = -40f;
+            force = -80f;
         }
     }
 
@@ -26,17 +24,15 @@ public class lightAttack : MonoBehaviour
     {
         if (col.gameObject.tag == "Destructable")
         {
-            col.gameObject.GetComponent<Rigidbody>().AddForce(20 * force,0 ,0);
+            col.gameObject.GetComponent<Rigidbody>().AddForce(20 * force, 0, 0);
             col.gameObject.GetComponent<WallDestruction>().LooseHealth();
         }
 
-        if (col.gameObject.tag == "Player" && col.gameObject != self)
+        if (col.gameObject.tag == "Player" && col.gameObject != self )
         {
             col.gameObject.GetComponent<Rigidbody>().AddForce(20 * force, 0, 0);
             playerHealth ph = col.gameObject.GetComponent<playerHealth>();
-            ph.healthlite();
-            playerEnergy pe = self.GetComponent<playerEnergy>();
-            pe.Energylite();
+            ph.healthhvy();
         }
     }
 }
