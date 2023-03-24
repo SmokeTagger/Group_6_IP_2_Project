@@ -144,17 +144,17 @@ public class playerMovement : MonoBehaviour
         // Add a dash 
     }
 
-   private void OnCollisionEnter(Collision collision) // detects collision
+   private void OnCollisionEnter(Collision col) // detects collision
     {
-        if(collision.gameObject.tag == "Ground") // if player comes into contact with a objects 
+        if(col.gameObject.tag == "Ground" ) // if player comes into contact with a objects 
         {
             isGrounded = true;
         }
     }
 
-    private void OnCollisionExit(Collision collison) // if object does not collide with ground tag stops character from jumping 
+    private void OnCollisionExit(Collision col) // if object does not collide with ground tag stops character from jumping 
     {
-        if (collison.gameObject.tag == "Ground")
+        if (col.gameObject.tag == "Ground" )
         {
             isGrounded = false;
         }
