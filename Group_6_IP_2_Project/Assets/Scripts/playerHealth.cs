@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class playerHealth : MonoBehaviour
 {
-    [SerializeField] int health = 200;
+    public int health = 120;
     public TextMeshProUGUI healthmeter;
     public GameObject player;
 
@@ -31,7 +31,7 @@ public class playerHealth : MonoBehaviour
     public void healthhvy()
 
     {
-        health -= 30;
+        health -= 20;
         healthmeter.text = player.name + " Health : " + health;
     }
 
@@ -43,7 +43,7 @@ public class playerHealth : MonoBehaviour
 
     public void healthSuper()
     {
-        health -= 50;
+        health -= 40;
         healthmeter.text = player.name + " Health : " + health;
     }
 }

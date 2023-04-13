@@ -6,6 +6,7 @@ public class pickupSpawner : MonoBehaviour
 {
     [SerializeField] float spawntimer = 15f;
     public GameObject grenade;
+    public GameObject health;
     public GameObject thisSpawner;
     public List<GameObject> spawns = new List<GameObject>();
 
@@ -24,13 +25,28 @@ public class pickupSpawner : MonoBehaviour
 
             if (spawntimer > 20f)
             {
-                var currentgrenade = Instantiate(grenade, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
-                spawns.Add(currentgrenade);
+                int i = Random.Range(1, 10);
 
-                grenadePickUp pickup = currentgrenade.GetComponent<grenadePickUp>();
-                pickup.spawner = thisSpawner;
+                if (i < 5)
+                {
+                    var currentspawn = Instantiate(grenade, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+                    spawns.Add(currentspawn);
 
-                spawntimer = 0f;
+                    grenadePickUp pickup = currentspawn.GetComponent<grenadePickUp>();
+                    pickup.spawner = thisSpawner;
+
+                    spawntimer = 0f;
+                }
+                else 
+                {
+                    var currentspawn = Instantiate(health, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(new Vector3(0, 0, 20)));
+                    spawns.Add(currentspawn);
+
+                    healthPickup pickup = currentspawn.GetComponent<healthPickup>();
+                    pickup.spawner = thisSpawner;
+
+                    spawntimer = 0f;
+                }
             }
         }
     }
