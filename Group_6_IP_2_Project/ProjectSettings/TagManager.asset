@@ -14,6 +14,7 @@ TagManager:
   - Destructable
   - Grenade
   - MultiDestruction
+  - Music
   layers:
   - Default
   - TransparentFX

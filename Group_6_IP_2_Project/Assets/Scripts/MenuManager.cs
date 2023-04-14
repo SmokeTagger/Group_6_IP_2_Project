@@ -58,6 +58,26 @@ public class MenuManager : MonoBehaviour
                 Time.timeScale = 1;
                 hud.SetActive(true);
                 characterSelect.SetActive(false);
+                var musicBox = GameObject.FindWithTag("Music");
+                menuMusic mM = musicBox.GetComponent<menuMusic>();
+                mM.stopBackground();
+
+                int rand = Random.Range(1, 3);
+
+                switch (rand) 
+                {
+                    case 1:
+                        mM.playBattle1();
+                        break;
+
+                    case 2:
+                        mM.playBattle2();
+                        break;
+
+                    case 3:
+                        mM.playBattle3();
+                        break;
+                }
 
                 if (wizard1.activeInHierarchy) 
                 {
