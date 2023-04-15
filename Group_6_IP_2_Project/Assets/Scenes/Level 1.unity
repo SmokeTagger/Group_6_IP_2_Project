@@ -2418,7 +2418,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60.51361
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2463,8 +2463,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1169b62971d63e4e92c4fd81d4b82f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuMana: {fileID: 1281742444}
   target: []
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 10, z: -40}
+  velocity: {x: 0, y: 0, z: 0}
+  smoothTime: 0.5
+  minZoom: 100
+  maxZoom: 25
+  zoomLimiter: 75
 --- !u!4 &517138570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5218326349496940702, guid: 9f93ee2acd51cbc4c8a558ff2dd31459, type: 3}
@@ -3308,7 +3314,7 @@ MonoBehaviour:
   Hatk: {fileID: 1219421604}
   Datk: {fileID: 870230149}
   Satk: {fileID: 0}
-  light: 116
+  Light: 0
   heavy: 121
   down: 102
   super: 0
@@ -6289,7 +6295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281742442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.5, y: 22.8, z: -52.6}
+  m_LocalPosition: {x: 2.56, y: 22.8, z: -65.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6320,6 +6326,7 @@ MonoBehaviour:
   player2Spawn: {fileID: 249204153}
   wizardPrefab: {fileID: 643933721117906186, guid: 9d40287276d99d04a809a6f989647b5a, type: 3}
   fighterPrefab: {fileID: 1917518529097921179, guid: a10215cb681c4654f947a63ae39e9c71, type: 3}
+  multiCam: {fileID: 498441548}
 --- !u!4 &1283509331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8424759948503468876, guid: fb00ff36c4dc7ef47924f097233a89c0, type: 3}
@@ -8002,7 +8009,7 @@ MonoBehaviour:
   Hatk: {fileID: 1380034322}
   Datk: {fileID: 1284316123}
   Satk: {fileID: 0}
-  light: 111
+  Light: 0
   heavy: 105
   down: 108
   super: 0
@@ -9489,14 +9496,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -5169677972427226811, guid: 59f48806177e9d64195921d458b8d89e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fb97f31a1b388094e9c368f24dd5a9a2, type: 2}
-    - target: {fileID: -5169677972427226811, guid: 59f48806177e9d64195921d458b8d89e, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5500290d3cd86fe42acf936d4e4c370d, type: 2}
     - target: {fileID: -124420212706131197, guid: 59f48806177e9d64195921d458b8d89e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.2019
@@ -9505,10 +9504,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props to work with
       objectReference: {fileID: 0}
-    - target: {fileID: 2831065782900121813, guid: 59f48806177e9d64195921d458b8d89e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7e441ef2f5584b74f9239676dec08451, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f48806177e9d64195921d458b8d89e, type: 3}
 --- !u!4 &2111574743 stripped
