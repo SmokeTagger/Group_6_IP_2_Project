@@ -23,6 +23,8 @@ public class MenuManager : MonoBehaviour
     public GameObject wizardPrefab;
     public GameObject fighterPrefab;
 
+    public GameObject multiCam;
+
     public void Start()
     {
         Time.timeScale = 0;
@@ -59,25 +61,25 @@ public class MenuManager : MonoBehaviour
                 hud.SetActive(true);
                 characterSelect.SetActive(false);
                 var musicBox = GameObject.FindWithTag("Music");
-                menuMusic mM = musicBox.GetComponent<menuMusic>();
-                mM.stopBackground();
+                //menuMusic mM = musicBox.GetComponent<menuMusic>();
+                //mM.stopBackground();
 
                 int rand = Random.Range(1, 3);
 
-                switch (rand) 
-                {
-                    case 1:
-                        mM.playBattle1();
-                        break;
+                //switch (rand) 
+                //{
+                //    case 1:
+                //        mM.playBattle1();
+                //        break;
 
-                    case 2:
-                        mM.playBattle2();
-                        break;
+                //    case 2:
+                //        mM.playBattle2();
+                //        break;
 
-                    case 3:
-                        mM.playBattle3();
-                        break;
-                }
+                //    case 3:
+                //        mM.playBattle3();
+                //        break;
+                //}
 
                 if (wizard1.activeInHierarchy) 
                 {
@@ -86,13 +88,15 @@ public class MenuManager : MonoBehaviour
                     script.left = KeyCode.A;
                     script.right = KeyCode.D;
                     script.jump = KeyCode.W;
-                    script.light = KeyCode.T;
+                    script.Light = KeyCode.T;
                     script.heavy = KeyCode.U;
                     script.down = KeyCode.Y;
                     script.super = KeyCode.F;
                     script.turn = KeyCode.S;
                     script.throwable = KeyCode.R;
                     script.facing = true;
+                    MultipleTargetCamera mtc = multiCam.GetComponent<MultipleTargetCamera>();
+                    mtc.target.Add(tospawn.transform);
                 }
 
                 if (wizard2.activeInHierarchy)
@@ -102,13 +106,15 @@ public class MenuManager : MonoBehaviour
                     script.left = KeyCode.LeftArrow;
                     script.right = KeyCode.RightArrow;
                     script.jump = KeyCode.UpArrow;
-                    script.light = KeyCode.Keypad1;
+                    script.Light = KeyCode.Keypad1;
                     script.heavy = KeyCode.Keypad3;
                     script.down = KeyCode.Keypad2;
                     script.super = KeyCode.Keypad0;
                     script.turn = KeyCode.DownArrow;
                     script.throwable = KeyCode.KeypadEnter;
                     script.facing = false;
+                    MultipleTargetCamera mtc = multiCam.GetComponent<MultipleTargetCamera>();
+                    mtc.target.Add(tospawn.transform);
                 }
 
                 if (fighter1.activeInHierarchy)
@@ -118,13 +124,15 @@ public class MenuManager : MonoBehaviour
                     script.left = KeyCode.A;
                     script.right = KeyCode.D;
                     script.jump = KeyCode.W;
-                    script.light = KeyCode.T;
+                    script.Light = KeyCode.T;
                     script.heavy = KeyCode.U;
                     script.down = KeyCode.Y;
                     script.super = KeyCode.F;
                     script.turn = KeyCode.S;
                     script.throwable = KeyCode.R;
                     script.facing = true;
+                    MultipleTargetCamera mtc = multiCam.GetComponent<MultipleTargetCamera>();
+                    mtc.target.Add(tospawn.transform);
                 }
 
                 if (fighter2.activeInHierarchy)
@@ -134,13 +142,15 @@ public class MenuManager : MonoBehaviour
                     script.left = KeyCode.LeftArrow;
                     script.right = KeyCode.RightArrow;
                     script.jump = KeyCode.UpArrow;
-                    script.light = KeyCode.Keypad1;
+                    script.Light = KeyCode.Keypad1;
                     script.heavy = KeyCode.Keypad3;
                     script.down = KeyCode.Keypad2;
                     script.super = KeyCode.Keypad0;
                     script.turn = KeyCode.DownArrow;
                     script.throwable = KeyCode.KeypadEnter;
                     script.facing = false;
+                    MultipleTargetCamera mtc = multiCam.GetComponent<MultipleTargetCamera>();
+                    mtc.target.Add(tospawn.transform);
                 }
 
             }

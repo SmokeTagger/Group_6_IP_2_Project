@@ -28,7 +28,7 @@ public class playerMovement : MonoBehaviour
     public GameObject Satk;
 
     //Attack Inputs
-    public KeyCode light;
+    public KeyCode Light;
     public KeyCode heavy;
     public KeyCode down;
     public KeyCode super;
@@ -76,7 +76,7 @@ public class playerMovement : MonoBehaviour
         //moveHorizontal = Input.GetAxisRaw("Horizontal"); // Sets input variables for horizontal and Vertical
         //moveVertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(light) && canAttack)
+        if (Input.GetKeyDown(Light) && canAttack)
         {
             lightAttack(); 
         }
