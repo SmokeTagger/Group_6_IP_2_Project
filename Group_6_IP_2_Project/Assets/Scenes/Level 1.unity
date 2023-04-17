@@ -2793,11 +2793,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 498441548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1169b62971d63e4e92c4fd81d4b82f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 787d2a5f9ef706c499d6d5af93560ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuMana: {fileID: 1281742444}
   target: []
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 4, z: -30}
+  velocity: {x: 0, y: 0, z: 0}
+  smoothTime: 0.5
+  minZoom: 250
+  maxZoom: 15
+  zoomLimiter: 75
 --- !u!4 &517138570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5218326349496940702, guid: 9f93ee2acd51cbc4c8a558ff2dd31459, type: 3}
@@ -7068,6 +7074,7 @@ MonoBehaviour:
   player2Spawn: {fileID: 249204153}
   wizardPrefab: {fileID: 643933721117906186, guid: 9d40287276d99d04a809a6f989647b5a, type: 3}
   fighterPrefab: {fileID: 1917518529097921179, guid: a10215cb681c4654f947a63ae39e9c71, type: 3}
+  multiCam: {fileID: 498441548}
 --- !u!4 &1283509331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8424759948503468876, guid: fb00ff36c4dc7ef47924f097233a89c0, type: 3}
