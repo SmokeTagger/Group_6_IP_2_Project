@@ -2801,8 +2801,8 @@ MonoBehaviour:
   offset: {x: 0, y: 9, z: -30}
   velocity: {x: 0, y: 0, z: 0}
   smoothTime: 0.5
-  minZoom: 250
-  maxZoom: -145
+  minZoom: 120
+  maxZoom: 15
   zoomLimiter: 75
 --- !u!4 &517138570 stripped
 Transform:
