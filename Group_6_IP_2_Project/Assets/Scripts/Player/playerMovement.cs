@@ -26,6 +26,7 @@ public class playerMovement : MonoBehaviour
     public GameObject Hatk;
     public GameObject Datk;
     public GameObject Satk;
+    public GameObject SatkMarker;
 
     //Attack Inputs
     public KeyCode light;
@@ -53,6 +54,7 @@ public class playerMovement : MonoBehaviour
     public GameObject spawner;
     public GameObject grenadethrowble;
     float thrust = -1000;
+    public GameObject grenadeMarker;
 
     // Start is called before the first frame update
     void Start()
@@ -119,6 +121,25 @@ public class playerMovement : MonoBehaviour
         if (!facing)
         {
             trigger.SetActive(false);
+        }
+
+        if (grenade) 
+        { 
+            grenadeMarker.SetActive(true);
+        }
+        else 
+        {
+            grenadeMarker.SetActive(false);
+        }
+
+        playerEnergy pe = GetComponent<playerEnergy>();
+        if (pe.activeSuper == true) 
+        { 
+            SatkMarker.SetActive(true);
+        }
+        else 
+        {
+            SatkMarker.SetActive(false);
         }
     }
 

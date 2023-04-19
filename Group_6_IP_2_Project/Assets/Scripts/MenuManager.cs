@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class MenuManager : MonoBehaviour
 {
@@ -41,14 +42,28 @@ public class MenuManager : MonoBehaviour
     public GameObject P2H40;
     public GameObject P2H20;
 
+    public GameObject P1Grenade;
+    public GameObject P2Grenade;
+    public GameObject P1Super;
+    public GameObject P2Super;
+
     public Slider levelMusic;
     public Slider levelSFX;
     public Slider LevelBrightness;
 
+    public GameObject GameOver;
+    public GameObject winner1;
+    public GameObject winner2;
+
+    GameObject musicBox;
+    menuMusic mM;
+
     public void Start()
     {
         Time.timeScale = 0;
-        //Instantiate(wizardPrefab, player1Spawn.transform.position, player1Spawn.transform.rotation);
+        musicBox = GameObject.FindWithTag("Music");
+        mM = musicBox.GetComponent<menuMusic>();
+
     }
 
     public void Update()
@@ -77,6 +92,16 @@ public class MenuManager : MonoBehaviour
                 print("Level to loading");
             }
         }
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 0;
+        if (musicBox != null) 
+        { 
+        mM.stopBattle();
+        }
+        SceneManager.LoadScene(0);
     }
 
     public void Quit()
@@ -110,12 +135,16 @@ public class MenuManager : MonoBehaviour
                     script.turn = KeyCode.S;
                     script.throwable = KeyCode.R;
                     script.facing = true;
+                    script.SatkMarker = P1Super;
+                    script.grenadeMarker = P1Grenade;
                     health.H120 = P1H120;
                     health.H100 = P1H100;
                     health.H80 = P1H80;
                     health.H60 = P1H60;
                     health.H40 = P1H40;
                     health.H20 = P1H20;
+                    health.gameOver = GameOver;
+                    health.winner = winner2;
                     MultipleTargetCamera mtc = multiCam.GetComponent<MultipleTargetCamera>();
                     mtc.target.Add(tospawn.transform);
                 }
@@ -135,12 +164,16 @@ public class MenuManager : MonoBehaviour
                     script.turn = KeyCode.DownArrow;
                     script.throwable = KeyCode.KeypadEnter;
                     script.facing = false;
+                    script.SatkMarker = P2Super;
+                    script.grenadeMarker = P2Grenade;
                     health.H120 = P2H120;
                     health.H100 = P2H100;
                     health.H80 = P2H80;
                     health.H60 = P2H60;
                     health.H40 = P2H40;
                     health.H20 = P2H20;
+                    health.gameOver = GameOver;
+                    health.winner = winner1;
                     MultipleTargetCamera mtc = multiCam.GetComponent<MultipleTargetCamera>();
                     mtc.target.Add(tospawn.transform);
                 }
@@ -160,12 +193,16 @@ public class MenuManager : MonoBehaviour
                     script.turn = KeyCode.S;
                     script.throwable = KeyCode.R;
                     script.facing = true;
+                    script.SatkMarker = P1Super;
+                    script.grenadeMarker = P1Grenade;
                     health.H120 = P1H120;
                     health.H100 = P1H100;
                     health.H80 = P1H80;
                     health.H60 = P1H60;
                     health.H40 = P1H40;
                     health.H20 = P1H20;
+                    health.gameOver = GameOver;
+                    health.winner = winner2;
                     MultipleTargetCamera mtc = multiCam.GetComponent<MultipleTargetCamera>();
                     mtc.target.Add(tospawn.transform);
                 }
@@ -185,12 +222,16 @@ public class MenuManager : MonoBehaviour
                     script.turn = KeyCode.DownArrow;
                     script.throwable = KeyCode.KeypadEnter;
                     script.facing = false;
+                    script.SatkMarker = P2Super;
+                    script.grenadeMarker = P2Grenade;
                     health.H120 = P2H120;
                     health.H100 = P2H100;
                     health.H80 = P2H80;
                     health.H60 = P2H60;
                     health.H40 = P2H40;
                     health.H20 = P2H20;
+                    health.gameOver = GameOver;
+                    health.winner = winner1;
                     MultipleTargetCamera mtc = multiCam.GetComponent<MultipleTargetCamera>();
                     mtc.target.Add(tospawn.transform);
                 }
@@ -201,11 +242,10 @@ public class MenuManager : MonoBehaviour
 
     private void Music() 
     {
-        var musicBox = GameObject.FindWithTag("Music");
+
 
         if (musicBox != null)
         {
-            menuMusic mM = musicBox.GetComponent<menuMusic>();
             mM.stopBackground();
 
 

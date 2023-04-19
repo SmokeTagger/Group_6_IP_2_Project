@@ -9,6 +9,9 @@ public class timer : MonoBehaviour
     public float timeValue = 300;
     public TextMeshProUGUI timeNumber;
 
+    public GameObject gameOver;
+    public GameObject draw;
+
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +24,9 @@ public class timer : MonoBehaviour
         {
             timeValue = 0;
             Time.timeScale = 0f;
+            gameOver.SetActive(true);
+            draw.SetActive(true);
+
         }
 
         DisplayTime(timeValue);

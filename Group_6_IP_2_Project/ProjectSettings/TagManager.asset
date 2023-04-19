@@ -17,6 +17,7 @@ TagManager:
   - Music
   - MusicSlider
   - SFXSlider
+  - Brightness
   layers:
   - Default
   - TransparentFX

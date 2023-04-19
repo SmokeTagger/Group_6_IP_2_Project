@@ -16,6 +16,8 @@ public class playerHealth : MonoBehaviour
     public GameObject H40;
     public GameObject H20;
 
+    public GameObject gameOver;
+    public GameObject winner;
     void Start()
     {
         healthmeter.text = player.name + " Health : " + health;
@@ -79,7 +81,10 @@ public class playerHealth : MonoBehaviour
         }
         if (health <= 0)
         {
-            Destroy(gameObject);    
+            Destroy(gameObject);
+            Time.timeScale = 0;
+            gameOver.SetActive(true);
+            winner.SetActive(true);
         }
 
 
