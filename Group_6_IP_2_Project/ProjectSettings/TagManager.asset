@@ -14,11 +14,6 @@ TagManager:
   - Destructable
   - Grenade
   - MultiDestruction
-  - Music
-  - MusicSlider
-  - SFXSlider
-  - Brightness
-  - Music Box
   layers:
   - Default
   - TransparentFX
@@ -26,7 +21,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - Post Procesing
+  - 
   - 
   - 
   - 
