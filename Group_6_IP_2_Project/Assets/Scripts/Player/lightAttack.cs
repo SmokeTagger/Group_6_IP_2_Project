@@ -7,16 +7,21 @@ public class lightAttack : MonoBehaviour
     [SerializeField] float force ;
     public GameObject trigger;
     public GameObject self;
+    playerMovement move;
 
+    private void Start()
+    {
+        move = self.GetComponent<playerMovement>();
+    }
 
     private void Update()
     {
         
-        if (trigger.activeInHierarchy)
+        if (move.facing)
         {
             force = 40f;
         }
-        if (!trigger.activeInHierarchy)
+        if (!move.facing)
         {
             force = -40f;
         }

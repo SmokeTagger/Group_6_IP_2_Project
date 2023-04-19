@@ -853,6 +853,12 @@ MonoBehaviour:
   health: 120
   healthmeter: {fileID: 0}
   player: {fileID: 1917518529097921179}
+  H120: {fileID: 0}
+  H100: {fileID: 0}
+  H80: {fileID: 0}
+  H60: {fileID: 0}
+  H40: {fileID: 0}
+  H20: {fileID: 0}
 --- !u!54 &1285694533445363746
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1550,7 +1556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 0
   trigger: {fileID: 3178521612041927565}
-  self: {fileID: 0}
+  self: {fileID: 1917518529097921179}
 --- !u!54 &3178521610865050940
 Rigidbody:
   m_ObjectHideFlags: 0

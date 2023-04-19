@@ -1,20 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class heavyAttack : MonoBehaviour
 {
-    [SerializeField] float force = -1600;
+    [SerializeField] float force;
     public GameObject trigger;
     public GameObject self;
+    playerMovement move;
+
+    private void Start() 
+    { 
+        move = self.GetComponent<playerMovement>();
+    }
 
     private void Update()
     {
-        if(trigger.activeInHierarchy)
+        if(move.facing)
         {
             force = 80f;
         }
-        if (!trigger.activeInHierarchy)
+        if (!move.facing)
         {
             force = -80f;
         }

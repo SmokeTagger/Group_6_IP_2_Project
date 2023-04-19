@@ -25,6 +25,20 @@ public class MenuManager : MonoBehaviour
 
     public GameObject multiCam;
 
+    public GameObject P1H120;
+    public GameObject P1H100;
+    public GameObject P1H80;
+    public GameObject P1H60;
+    public GameObject P1H40;
+    public GameObject P1H20;
+
+    public GameObject P2H120;
+    public GameObject P2H100;
+    public GameObject P2H80;
+    public GameObject P2H60;
+    public GameObject P2H40;
+    public GameObject P2H20;
+
     public void Start()
     {
         Time.timeScale = 0;
@@ -83,8 +97,9 @@ public class MenuManager : MonoBehaviour
 
                 if (wizard1.activeInHierarchy) 
                 {
-                    var tospawn = Instantiate(wizardPrefab, player1Spawn.transform.position, player1Spawn.transform.rotation);
+                    var tospawn = Instantiate(wizardPrefab, player1Spawn.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
                     playerMovement script = tospawn.GetComponent<playerMovement>();
+                    playerHealth health = tospawn.GetComponent<playerHealth>();
                     script.left = KeyCode.A;
                     script.right = KeyCode.D;
                     script.jump = KeyCode.W;
@@ -95,14 +110,21 @@ public class MenuManager : MonoBehaviour
                     script.turn = KeyCode.S;
                     script.throwable = KeyCode.R;
                     script.facing = true;
+                    health.H120 = P1H120;
+                    health.H100 = P1H100;
+                    health.H80 = P1H80;
+                    health.H60 = P1H60;
+                    health.H40 = P1H40;
+                    health.H20 = P1H20;
                     MultipleTargetCamera mtc = multiCam.GetComponent<MultipleTargetCamera>();
                     mtc.target.Add(tospawn.transform);
                 }
 
                 if (wizard2.activeInHierarchy)
                 {
-                    var tospawn = Instantiate(wizardPrefab, player2Spawn.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
+                    var tospawn = Instantiate(wizardPrefab, player2Spawn.transform.position, player1Spawn.transform.rotation);
                     playerMovement script = tospawn.GetComponent<playerMovement>();
+                    playerHealth health = tospawn.GetComponent<playerHealth>();
                     script.left = KeyCode.LeftArrow;
                     script.right = KeyCode.RightArrow;
                     script.jump = KeyCode.UpArrow;
@@ -113,6 +135,12 @@ public class MenuManager : MonoBehaviour
                     script.turn = KeyCode.DownArrow;
                     script.throwable = KeyCode.KeypadEnter;
                     script.facing = false;
+                    health.H120 = P2H120;
+                    health.H100 = P2H100;
+                    health.H80 = P2H80;
+                    health.H60 = P2H60;
+                    health.H40 = P2H40;
+                    health.H20 = P2H20;
                     MultipleTargetCamera mtc = multiCam.GetComponent<MultipleTargetCamera>();
                     mtc.target.Add(tospawn.transform);
                 }
@@ -121,6 +149,7 @@ public class MenuManager : MonoBehaviour
                 {
                     var tospawn = Instantiate(fighterPrefab, player1Spawn.transform.position, player1Spawn.transform.rotation);
                     playerMovement script = tospawn.GetComponent<playerMovement>();
+                    playerHealth health = tospawn.GetComponent<playerHealth>();
                     script.left = KeyCode.A;
                     script.right = KeyCode.D;
                     script.jump = KeyCode.W;
@@ -131,6 +160,12 @@ public class MenuManager : MonoBehaviour
                     script.turn = KeyCode.S;
                     script.throwable = KeyCode.R;
                     script.facing = true;
+                    health.H120 = P1H120;
+                    health.H100 = P1H100;
+                    health.H80 = P1H80;
+                    health.H60 = P1H60;
+                    health.H40 = P1H40;
+                    health.H20 = P1H20;
                     MultipleTargetCamera mtc = multiCam.GetComponent<MultipleTargetCamera>();
                     mtc.target.Add(tospawn.transform);
                 }
@@ -139,6 +174,7 @@ public class MenuManager : MonoBehaviour
                 {
                     var tospawn = Instantiate(fighterPrefab, player2Spawn.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
                     playerMovement script = tospawn.GetComponent<playerMovement>();
+                    playerHealth health = tospawn.GetComponent<playerHealth>();
                     script.left = KeyCode.LeftArrow;
                     script.right = KeyCode.RightArrow;
                     script.jump = KeyCode.UpArrow;
@@ -149,6 +185,12 @@ public class MenuManager : MonoBehaviour
                     script.turn = KeyCode.DownArrow;
                     script.throwable = KeyCode.KeypadEnter;
                     script.facing = false;
+                    health.H120 = P2H120;
+                    health.H100 = P2H100;
+                    health.H80 = P2H80;
+                    health.H60 = P2H60;
+                    health.H40 = P2H40;
+                    health.H20 = P2H20;
                     MultipleTargetCamera mtc = multiCam.GetComponent<MultipleTargetCamera>();
                     mtc.target.Add(tospawn.transform);
                 }
