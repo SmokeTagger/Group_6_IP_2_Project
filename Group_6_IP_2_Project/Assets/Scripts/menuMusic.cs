@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class menuMusic : MonoBehaviour
 {
@@ -13,6 +14,13 @@ public class menuMusic : MonoBehaviour
 
     public AudioSource buttonClick;
 
+    public Slider mainmusic;
+    public Slider mainsfx;
+    public Slider mainBrightness;
+    public float musicValue;
+    public float sfxValue;
+    public float brightnessValue;
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -21,6 +29,14 @@ public class menuMusic : MonoBehaviour
     void start() 
     {
         playBackground();
+
+    }
+
+    private void Update()
+    {
+        sfxValue = mainsfx.value;
+        musicValue = mainmusic.value;
+        brightnessValue = mainBrightness.value;
     }
 
     public void playBackground() { background.Play(); }

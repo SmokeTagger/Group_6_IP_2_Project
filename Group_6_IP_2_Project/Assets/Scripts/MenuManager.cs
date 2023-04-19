@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class MenuManager : MonoBehaviour
 
     public GameObject characterSelect;
     public GameObject hud;
+    public GameObject pauseMenu;
 
     public GameObject wizard1;
     public GameObject wizard2;
@@ -39,12 +41,29 @@ public class MenuManager : MonoBehaviour
     public GameObject P2H40;
     public GameObject P2H20;
 
+    public Slider levelMusic;
+    public Slider levelSFX;
+    public Slider LevelBrightness;
+
     public void Start()
     {
         Time.timeScale = 0;
         //Instantiate(wizardPrefab, player1Spawn.transform.position, player1Spawn.transform.rotation);
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P)) 
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0; 
+        }
+    }
+
+    public void Continue() 
+    {
+        Time.timeScale = 1;
+    }
     public void StartGame() 
     {
         if (level1.activeInHierarchy || level2.activeInHierarchy) 
@@ -74,27 +93,8 @@ public class MenuManager : MonoBehaviour
                 Time.timeScale = 1;
                 hud.SetActive(true);
                 characterSelect.SetActive(false);
-                var musicBox = GameObject.FindWithTag("Music");
-                //menuMusic mM = musicBox.GetComponent<menuMusic>();
-                //mM.stopBackground();
-
-                int rand = Random.Range(1, 3);
-
-                //switch (rand) 
-                //{
-                //    case 1:
-                //        mM.playBattle1();
-                //        break;
-
-                //    case 2:
-                //        mM.playBattle2();
-                //        break;
-
-                //    case 3:
-                //        mM.playBattle3();
-                //        break;
-                //}
-
+                Music();
+                
                 if (wizard1.activeInHierarchy) 
                 {
                     var tospawn = Instantiate(wizardPrefab, player1Spawn.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
@@ -196,6 +196,39 @@ public class MenuManager : MonoBehaviour
                 }
 
             }
+        }
+    }
+
+    private void Music() 
+    {
+        var musicBox = GameObject.FindWithTag("Music");
+
+        if (musicBox != null)
+        {
+            menuMusic mM = musicBox.GetComponent<menuMusic>();
+            mM.stopBackground();
+
+
+            int rand = Random.Range(1, 3);
+
+            switch (rand)
+            {
+                case 1:
+                    mM.playBattle1();
+                    break;
+
+                case 2:
+                    mM.playBattle2();
+                    break;
+
+                case 3:
+                    mM.playBattle3();
+                    break;
+            }
+
+            levelMusic.value = mM.musicValue;
+            levelSFX.value = mM.sfxValue;
+            LevelBrightness.value = mM.brightnessValue;
         }
     }
 }
