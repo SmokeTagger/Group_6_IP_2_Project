@@ -540,6 +540,7 @@ MonoBehaviour:
   Hatk: {fileID: 1568063287496885108}
   Datk: {fileID: 8953347791917636238}
   Satk: {fileID: 3077184192675561431}
+  SatkMarker: {fileID: 0}
   light: 0
   heavy: 0
   down: 0
@@ -552,6 +553,7 @@ MonoBehaviour:
   throwable: 0
   spawner: {fileID: 9191525217836209562}
   grenadethrowble: {fileID: 2356467391294185762, guid: 4cd9dc465da9094448f91bc66c098115, type: 3}
+  grenadeMarker: {fileID: 0}
 --- !u!114 &3787891175495656783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,6 +588,8 @@ MonoBehaviour:
   H60: {fileID: 0}
   H40: {fileID: 0}
   H20: {fileID: 0}
+  gameOver: {fileID: 0}
+  winner: {fileID: 0}
 --- !u!114 &3981012177915217358
 MonoBehaviour:
   m_ObjectHideFlags: 0

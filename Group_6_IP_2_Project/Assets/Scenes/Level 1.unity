@@ -8908,6 +8908,8 @@ MonoBehaviour:
   spawner: {fileID: 682234581}
   grenadethrowble: {fileID: 2356467391294185762, guid: 4cd9dc465da9094448f91bc66c098115, type: 3}
   grenadeMarker: {fileID: 0}
+  musicBox: {fileID: 0}
+  wizard: 0
 --- !u!65 &728014338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13726,7 +13728,7 @@ GameObject:
   - component: {fileID: 1135841591}
   m_Layer: 0
   m_Name: Level Music Box
-  m_TagString: Untagged
+  m_TagString: Music Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21614,6 +21616,8 @@ MonoBehaviour:
   spawner: {fileID: 1090282840}
   grenadethrowble: {fileID: 2356467391294185762, guid: 4cd9dc465da9094448f91bc66c098115, type: 3}
   grenadeMarker: {fileID: 0}
+  musicBox: {fileID: 0}
+  wizard: 0
 --- !u!65 &1722752963
 BoxCollider:
   m_ObjectHideFlags: 0

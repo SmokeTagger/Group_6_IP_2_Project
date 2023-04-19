@@ -796,6 +796,7 @@ MonoBehaviour:
   Hatk: {fileID: 3178521612899075892}
   Datk: {fileID: 3178521610865050939}
   Satk: {fileID: 3178521611680401601}
+  SatkMarker: {fileID: 0}
   light: 257
   heavy: 259
   down: 258
@@ -808,6 +809,7 @@ MonoBehaviour:
   throwable: 271
   spawner: {fileID: 3178521612619478302}
   grenadethrowble: {fileID: 2356467391294185762, guid: 4cd9dc465da9094448f91bc66c098115, type: 3}
+  grenadeMarker: {fileID: 0}
 --- !u!114 &1285694533445363749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,6 +861,8 @@ MonoBehaviour:
   H60: {fileID: 0}
   H40: {fileID: 0}
   H20: {fileID: 0}
+  gameOver: {fileID: 0}
+  winner: {fileID: 0}
 --- !u!54 &1285694533445363746
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1602,7 +1606,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3178521611167122124}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0}
-  m_LocalPosition: {x: 0.0531, y: 0.085016645, z: -0.012005748}
+  m_LocalPosition: {x: 0.0718, y: 0.085016645, z: -0.012005748}
   m_LocalScale: {x: 0.016557427, y: 0.17005196, z: 0.17624518}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1732,7 +1736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3178521611680401601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.215, y: 0.07817, z: -0.011022116}
+  m_LocalPosition: {x: 0.2547, y: 0.07817, z: -0.011022116}
   m_LocalScale: {x: 0.38169545, y: 0.16854168, z: 0.21023127}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1924,7 +1928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3178521612899075892}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0}
-  m_LocalPosition: {x: 0.0531, y: 0.085016645, z: -0.012005748}
+  m_LocalPosition: {x: 0.0723, y: 0.085016645, z: -0.012005748}
   m_LocalScale: {x: 0.016557427, y: 0.17005196, z: 0.17624518}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -56,9 +56,15 @@ public class playerMovement : MonoBehaviour
     float thrust = -1000;
     public GameObject grenadeMarker;
 
+    public GameObject musicBox;
+    menuMusic mM;
+    public bool wizard;
+
     // Start is called before the first frame update
     void Start()
     {
+        musicBox = GameObject.FindWithTag("Music Box");
+        mM = musicBox.GetComponent<menuMusic>();
         rb = GetComponent<Rigidbody>();
 
         moveSpeed = 0.95f;

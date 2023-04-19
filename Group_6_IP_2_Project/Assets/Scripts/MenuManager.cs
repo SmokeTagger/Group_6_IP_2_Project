@@ -137,6 +137,7 @@ public class MenuManager : MonoBehaviour
                     script.facing = true;
                     script.SatkMarker = P1Super;
                     script.grenadeMarker = P1Grenade;
+                    script.wizard = true;
                     health.H120 = P1H120;
                     health.H100 = P1H100;
                     health.H80 = P1H80;
@@ -166,6 +167,7 @@ public class MenuManager : MonoBehaviour
                     script.facing = false;
                     script.SatkMarker = P2Super;
                     script.grenadeMarker = P2Grenade;
+                    script.wizard = true;
                     health.H120 = P2H120;
                     health.H100 = P2H100;
                     health.H80 = P2H80;
@@ -195,6 +197,7 @@ public class MenuManager : MonoBehaviour
                     script.facing = true;
                     script.SatkMarker = P1Super;
                     script.grenadeMarker = P1Grenade;
+                    script.wizard = false;
                     health.H120 = P1H120;
                     health.H100 = P1H100;
                     health.H80 = P1H80;
@@ -224,6 +227,7 @@ public class MenuManager : MonoBehaviour
                     script.facing = false;
                     script.SatkMarker = P2Super;
                     script.grenadeMarker = P2Grenade;
+                    script.wizard = false;
                     health.H120 = P2H120;
                     health.H100 = P2H100;
                     health.H80 = P2H80;
