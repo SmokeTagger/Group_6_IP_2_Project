@@ -5443,10 +5443,9 @@ MonoBehaviour:
   offset: {x: 0, y: 9, z: -30}
   velocity: {x: 0, y: 0, z: 0}
   smoothTime: 0.5
-  minZoom: 100
+  minZoom: 120
   maxZoom: 15
-  zoomLimiter: 65
-  zoomAug: 10
+  zoomLimiter: 75
 --- !u!114 &498441553
 MonoBehaviour:
   m_ObjectHideFlags: 0
