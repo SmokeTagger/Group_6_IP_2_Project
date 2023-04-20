@@ -9528,7 +9528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2904063357339541408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.79440117, y: 1.2803574, z: -0.010803223}
+  m_LocalPosition: {x: -0.742, y: 1.413, z: -0.010803223}
   m_LocalScale: {x: 1.74704, y: 1.74704, z: 1.74704}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10631,8 +10631,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -14583,8 +14583,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2784096, y: 1.7939388, z: 1.1091532}
-  m_Center: {x: 0.21287255, y: 0.77012724, z: -0.13001573}
+  m_Size: {x: 0.94173145, y: 1.6440018, z: 1.1091532}
+  m_Center: {x: 0.044533063, y: 0.8139521, z: -0.13001576}
 --- !u!54 &6244536401935485533
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14636,7 +14636,7 @@ MonoBehaviour:
   grenade: 0
   throwable: 0
   spawner: {fileID: 2904063357339541408}
-  grenadethrowble: {fileID: 2356467391294185762, guid: 4cd9dc465da9094448f91bc66c098115, type: 3}
+  grenadethrowble: {fileID: 5661144702285522937, guid: 92b6126de8ae1c84db6b0de0d84dba37, type: 3}
   grenadeMarker: {fileID: 0}
   musicBox: {fileID: 0}
   wizard: 0
@@ -18109,8 +18109,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8735535, y: 1.5425037, z: 2.1058984}
-  m_Center: {x: 0.10763204, y: 0.8089693, z: -2.0331302}
+  m_Size: {x: 1.8735535, y: 1.5425037, z: 0.7025131}
+  m_Center: {x: 0.10763207, y: 0.8089693, z: -0.9965405}
 --- !u!54 &5557875650229406166
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18122,8 +18122,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -18796,8 +18796,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -28211,8 +28211,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
