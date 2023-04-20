@@ -87,7 +87,7 @@ public class MenuManager : MonoBehaviour
             }
             else if (level2.activeInHierarchy) 
             {
-                print("Level to loading");
+                SceneManager.LoadScene(2);
             }
         }
     }

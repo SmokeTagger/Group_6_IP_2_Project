@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15287101, g: 0.17338678, b: 0.18287498, a: 1}
+  m_IndirectSpecularColor: {r: 0.15287118, g: 0.17338707, b: 0.18287537, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5538,7 +5538,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 200}
-  m_SizeDelta: {x: 600, y: 100}
+  m_SizeDelta: {x: 600, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &451003907
 MonoBehaviour:
@@ -8669,6 +8669,8 @@ MonoBehaviour:
   H20: {fileID: 0}
   gameOver: {fileID: 0}
   winner: {fileID: 0}
+  musicBox: {fileID: 0}
+  mM: {fileID: 0}
 --- !u!1001 &728712323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14357,7 +14359,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 200}
-  m_SizeDelta: {x: 600, y: 100}
+  m_SizeDelta: {x: 600, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185845045
 MonoBehaviour:
@@ -16001,9 +16003,6 @@ MonoBehaviour:
   P2Grenade: {fileID: 492063835}
   P1Super: {fileID: 2110774725}
   P2Super: {fileID: 708618036}
-  levelMusic: {fileID: 420415468}
-  levelSFX: {fileID: 248600001}
-  LevelBrightness: {fileID: 199696310}
   GameOver: {fileID: 358354627}
   winner1: {fileID: 451003905}
   winner2: {fileID: 1185845043}
@@ -20712,6 +20711,8 @@ MonoBehaviour:
   H20: {fileID: 0}
   gameOver: {fileID: 0}
   winner: {fileID: 0}
+  musicBox: {fileID: 0}
+  mM: {fileID: 0}
 --- !u!114 &1722752961
 MonoBehaviour:
   m_ObjectHideFlags: 0

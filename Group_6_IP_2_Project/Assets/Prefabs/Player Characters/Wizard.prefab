@@ -609,7 +609,7 @@ MonoBehaviour:
   energy: 0
   energyMax: 80
   energyMeter: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 8612360129425865868}
   activeSuper: 0
 --- !u!1 &8953347791917636238
 GameObject:
