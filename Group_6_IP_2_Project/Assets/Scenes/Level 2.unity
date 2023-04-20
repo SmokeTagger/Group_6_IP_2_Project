@@ -6653,8 +6653,10 @@ MonoBehaviour:
   left: 97
   right: 100
   jump: 119
+  baseModle: {fileID: 0}
   Latk: {fileID: 1246127205}
-  Hatk: {fileID: 1219421604}
+  Hatk1: {fileID: 0}
+  Hatk2: {fileID: 0}
   Datk: {fileID: 870230149}
   Satk: {fileID: 0}
   SatkMarker: {fileID: 0}
@@ -11132,7 +11134,7 @@ MonoBehaviour:
   fighter2: {fileID: 1673693418}
   player1Spawn: {fileID: 1126259178}
   player2Spawn: {fileID: 249204153}
-  wizardPrefab: {fileID: 8612360129425865868, guid: 8dd8f8341312e9c4ca37644aadf689f7, type: 3}
+  wizardPrefab: {fileID: 4305830429750086455, guid: 9c32a3ebf948d1e4db8cc7f3ef31b701, type: 3}
   fighterPrefab: {fileID: 1917518529097921179, guid: a10215cb681c4654f947a63ae39e9c71, type: 3}
   multiCam: {fileID: 498441548}
   P1H120: {fileID: 357314710}
@@ -14202,8 +14204,10 @@ MonoBehaviour:
   left: 276
   right: 275
   jump: 273
+  baseModle: {fileID: 0}
   Latk: {fileID: 1899286183}
-  Hatk: {fileID: 1380034322}
+  Hatk1: {fileID: 0}
+  Hatk2: {fileID: 0}
   Datk: {fileID: 1284316123}
   Satk: {fileID: 0}
   SatkMarker: {fileID: 0}

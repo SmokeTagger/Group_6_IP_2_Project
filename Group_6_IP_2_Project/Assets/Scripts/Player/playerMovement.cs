@@ -21,9 +21,12 @@ public class playerMovement : MonoBehaviour
     //private float moveHorizontal;
     //private float moveVertical;
 
+    public GameObject baseModle;
+
     //Attacks
     public GameObject Latk;
-    public GameObject Hatk;
+    public GameObject Hatk1;
+    public GameObject Hatk2;
     public GameObject Datk;
     public GameObject Satk;
     public GameObject SatkMarker;
@@ -260,9 +263,11 @@ public class playerMovement : MonoBehaviour
     private IEnumerator lAttack()
     {
         canAttack = false;
+        baseModle.SetActive(false);
         Latk.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         Latk.SetActive(false);
+        baseModle.SetActive(true) ;
         yield return new WaitForSeconds(0.2f);
         canAttack = true;
     }
@@ -270,10 +275,14 @@ public class playerMovement : MonoBehaviour
     private IEnumerator hAttack()
     {
         canAttack = false;
+        baseModle.SetActive(false);
+        Hatk1.SetActive(true);
         yield return new WaitForSeconds(0.3f);
-        Hatk.SetActive(true);
+        Hatk1.SetActive(false);
+        Hatk2.SetActive(true);
         yield return new WaitForSeconds(0.1f); 
-        Hatk.SetActive(false);
+        Hatk2.SetActive(false);
+        baseModle.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         canAttack = true;
 
@@ -286,9 +295,11 @@ public class playerMovement : MonoBehaviour
             canAttack = false;
             yield return new WaitForSeconds(0.2f);
             rb.AddForce(new Vector2(0f, -datkForce), ForceMode.Impulse);
+            baseModle.SetActive(false);
             Datk.SetActive(true);
             yield return new WaitForSeconds(0.2f);
             Datk.SetActive(false);
+            baseModle.SetActive(true);
             yield return new WaitForSeconds(0.2f);
             canAttack = true;
         }
@@ -302,10 +313,12 @@ public class playerMovement : MonoBehaviour
         {
             canAttack = false;
             yield return new WaitForSeconds(0.5f);
+            baseModle.SetActive(false);
             Satk.SetActive(true);
             mM.PlaySuper();
             yield return new WaitForSeconds(0.5f);
             Satk.SetActive(false);
+            baseModle.SetActive(true) ;
             pe.EnergyReset();
             yield return new WaitForSeconds(0.2f);
             canAttack = true;
