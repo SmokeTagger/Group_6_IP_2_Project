@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class playerEnergy : MonoBehaviour
 {
-    [SerializeField] int energy = 0;
-    [SerializeField] int energyMax = 100;
+    [SerializeField] int energy;
+    [SerializeField] int energyMax;
     public TextMeshProUGUI energyMeter;
     public GameObject player;
     public bool activeSuper;
@@ -17,15 +17,15 @@ public class playerEnergy : MonoBehaviour
         activeSuper = false;
         energyMeter.text = " Energy : " + energy;
         energy = 0;
-        energyMax = 100;
+        energyMax = 80;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (energy >= energyMax)
+        if (energy == energyMax)
         {
-            energy = 100;
+            energy = energyMax;
             activeSuper = true;
             energyMeter.text = " Energy : " + energy;
         }
@@ -33,19 +33,19 @@ public class playerEnergy : MonoBehaviour
 
     public void Energylite()
     {
-        energy += 10;
+        energy += 20;
         energyMeter.text = " Energy : " + energy;
     }
 
     public void Energyhvy()
     {
-        energy += 25;
+        energy += 40;
         energyMeter.text = " Energy : " + energy;
     }
 
     public void Energydown()
     {
-        energy += 15;
+        energy += 20;
         energyMeter.text = " Energy : " + energy;
     }
 

@@ -554,6 +554,8 @@ MonoBehaviour:
   spawner: {fileID: 9191525217836209562}
   grenadethrowble: {fileID: 2356467391294185762, guid: 4cd9dc465da9094448f91bc66c098115, type: 3}
   grenadeMarker: {fileID: 0}
+  musicBox: {fileID: 0}
+  wizard: 0
 --- !u!114 &3787891175495656783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,7 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 120
   healthmeter: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 8612360129425865868}
   H120: {fileID: 0}
   H100: {fileID: 0}
   H80: {fileID: 0}
@@ -590,6 +592,8 @@ MonoBehaviour:
   H20: {fileID: 0}
   gameOver: {fileID: 0}
   winner: {fileID: 0}
+  musicBox: {fileID: 0}
+  mM: {fileID: 0}
 --- !u!114 &3981012177915217358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energy: 0
-  energyMax: 100
+  energyMax: 80
   energyMeter: {fileID: 0}
   player: {fileID: 0}
   activeSuper: 0

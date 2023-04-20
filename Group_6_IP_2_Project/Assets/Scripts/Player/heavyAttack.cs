@@ -10,6 +10,7 @@ public class heavyAttack : MonoBehaviour
     public GameObject self;
     playerMovement move;
 
+
     private void Start() 
     { 
         move = self.GetComponent<playerMovement>();
@@ -25,6 +26,8 @@ public class heavyAttack : MonoBehaviour
         {
             force = -80f;
         }
+
+
     }
 
     private void OnCollisionEnter(Collision col)

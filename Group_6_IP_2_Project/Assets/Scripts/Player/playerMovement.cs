@@ -53,7 +53,7 @@ public class playerMovement : MonoBehaviour
     // Throwable Variables
     public GameObject spawner;
     public GameObject grenadethrowble;
-    float thrust = -1000;
+    float thrust = 1000;
     public GameObject grenadeMarker;
 
     public GameObject musicBox;
@@ -63,14 +63,15 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        musicBox = GameObject.FindWithTag("Music Box");
-        mM = musicBox.GetComponent<menuMusic>();
+        
         rb = GetComponent<Rigidbody>();
 
         moveSpeed = 0.95f;
         jumpForce = 10f;
         isGrounded = false;
         datkForce = 50f;
+
+        if(!wizard) { thrust = -1000; }
     }
 
     // A and D left right movement 
@@ -80,23 +81,53 @@ public class playerMovement : MonoBehaviour
     // J heavy Attack
     void Update()
     {
+        musicBox = GameObject.FindWithTag("Music");
+        mM = musicBox.GetComponent<menuMusic>();
         // Old Code 
         //moveHorizontal = Input.GetAxisRaw("Horizontal"); // Sets input variables for horizontal and Vertical
         //moveVertical = Input.GetAxisRaw("Vertical");
 
+
         if (Input.GetKeyDown(light) && canAttack)
         {
             lightAttack(); 
+
+            if(wizard) 
+            { 
+                mM.PlayWizardSwing(); 
+            }
+            else 
+            { 
+                mM.PlayFighterSwing(); 
+            }
         }
 
         if (Input.GetKeyDown(heavy) && canAttack)
         {
             heavyAttack();
+
+            if (wizard)
+            {
+                mM.PlayWizardSwing();
+            }
+            else
+            {
+                mM.PlayFighterSwing();
+            }
         }
 
         if(Input.GetKeyDown(down) && canAttack)
         {
             downAttack();
+
+            if (wizard)
+            {
+                mM.PlayWizardSwing();
+            }
+            else
+            {
+                mM.PlayFighterSwing();
+            }
         }
 
         if (Input.GetKeyDown(super))
@@ -116,6 +147,15 @@ public class playerMovement : MonoBehaviour
             {
                 throwGrenade();
                 grenade = false;
+
+                if (wizard)
+                {
+                    mM.PlayWizardSwing();
+                }
+                else
+                {
+                    mM.PlayFighterSwing();
+                }
             }
         }
 
@@ -164,6 +204,15 @@ public class playerMovement : MonoBehaviour
         if (isGrounded && Input.GetKey(jump))
         {
             rb.AddForce(new Vector2(0f,/* moveVertical **/ jumpForce), ForceMode.Impulse); // adds upwards force 
+            if (wizard)
+            {
+                mM.PlayWizardJump();
+            }
+            else
+            {
+                mM.PlayFighterJump();
+            }
+
         }
 
         // Add a wall slide and wall jump 
@@ -254,6 +303,7 @@ public class playerMovement : MonoBehaviour
             canAttack = false;
             yield return new WaitForSeconds(0.5f);
             Satk.SetActive(true);
+            mM.PlaySuper();
             yield return new WaitForSeconds(0.5f);
             Satk.SetActive(false);
             pe.EnergyReset();

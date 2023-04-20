@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using Unity.VisualScripting;
 
 public class MenuManager : MonoBehaviour
@@ -47,27 +45,27 @@ public class MenuManager : MonoBehaviour
     public GameObject P1Super;
     public GameObject P2Super;
 
-    public Slider levelMusic;
-    public Slider levelSFX;
-    public Slider LevelBrightness;
+
 
     public GameObject GameOver;
     public GameObject winner1;
     public GameObject winner2;
 
-    GameObject musicBox;
-    menuMusic mM;
+    public GameObject musicBox;
+    public menuMusic mM;
 
     public void Start()
     {
         Time.timeScale = 0;
-        musicBox = GameObject.FindWithTag("Music");
-        mM = musicBox.GetComponent<menuMusic>();
+        
 
     }
 
     public void Update()
     {
+        musicBox = GameObject.FindWithTag("Music");
+        mM = musicBox.GetComponent<menuMusic>();
+
         if (Input.GetKeyDown(KeyCode.P)) 
         {
             pauseMenu.SetActive(true);
@@ -100,6 +98,7 @@ public class MenuManager : MonoBehaviour
         if (musicBox != null) 
         { 
         mM.stopBattle();
+        mM.playBackground();
         }
         SceneManager.LoadScene(0);
     }
@@ -118,7 +117,6 @@ public class MenuManager : MonoBehaviour
                 Time.timeScale = 1;
                 hud.SetActive(true);
                 characterSelect.SetActive(false);
-                Music();
                 
                 if (wizard1.activeInHierarchy) 
                 {
@@ -244,35 +242,4 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    private void Music() 
-    {
-
-
-        if (musicBox != null)
-        {
-            mM.stopBackground();
-
-
-            int rand = Random.Range(1, 3);
-
-            switch (rand)
-            {
-                case 1:
-                    mM.playBattle1();
-                    break;
-
-                case 2:
-                    mM.playBattle2();
-                    break;
-
-                case 3:
-                    mM.playBattle3();
-                    break;
-            }
-
-            levelMusic.value = mM.musicValue;
-            levelSFX.value = mM.sfxValue;
-            LevelBrightness.value = mM.brightnessValue;
-        }
-    }
 }

@@ -11,22 +11,33 @@ public class menuMusic : MonoBehaviour
     public AudioSource battle1;
     public AudioSource battle2;
     public AudioSource battle3;
+    public AudioSource fighterHeavy;
+    public AudioSource fighterLight;
+    public AudioSource fighterJump;
+    public AudioSource fighterSwing;
+    public AudioSource wizardHeavy;
+    public AudioSource wizardLight;
+    public AudioSource wizardJump;
+    public AudioSource wizardSwing;
+    public AudioSource super;
+    public AudioSource grenade;
+    public AudioSource healthUp;
+
 
     public AudioSource buttonClick;
 
-    public Slider mainmusic;
-    public Slider mainsfx;
-    public Slider mainBrightness;
+    GameObject mainMusicSlider;
+    Slider mainmusic;
+    GameObject mainSFXSlider;
+    Slider mainsfx;
+    GameObject mainBrightenssSlider;
+    Slider mainBrightness;
+
     public float musicValue;
     public float sfxValue;
     public float brightnessValue;
 
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
-    void start() 
+    void Start() 
     {
         playBackground();
 
@@ -34,6 +45,14 @@ public class menuMusic : MonoBehaviour
 
     private void Update()
     {
+        mainMusicSlider = GameObject.Find("Music Volume");
+        mainmusic = mainMusicSlider.GetComponent<Slider>();
+        mainSFXSlider = GameObject.Find("SFX Volume");
+        mainsfx = mainSFXSlider.GetComponent<Slider>();
+        mainBrightenssSlider = GameObject.Find("Brightenes");
+        mainBrightness = mainBrightenssSlider.GetComponent<Slider>();
+
+
         sfxValue = mainsfx.value;
         musicValue = mainmusic.value;
         brightnessValue = mainBrightness.value;
@@ -53,5 +72,25 @@ public class menuMusic : MonoBehaviour
 
     public void playClick() { buttonClick.Play(); }
 
+    public void PlayFighterLight() { fighterLight.Play(); }
 
+    public void PlayFighterHeavy() { fighterHeavy.Play(); }
+
+    public void PlayFighterJump() { fighterJump.Play(); }
+
+    public void PlayFighterSwing() { fighterSwing.Play(); }
+
+    public void PlayWizardLight() { wizardLight.Play(); }
+
+    public void PlayWizardHeavy() { wizardHeavy.Play(); }
+
+    public void PlayWizardJump() { wizardJump.Play(); }
+
+    public void PlayWizardSwing() { wizardSwing.Play(); }
+
+    public void PlaySuper() { super.Play(); }
+
+    public void PlayGrenade() { grenade.Play(); }
+
+    public void PlayHealthUp() { healthUp.Play(); }
 }

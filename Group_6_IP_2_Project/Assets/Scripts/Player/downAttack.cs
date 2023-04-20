@@ -7,19 +7,16 @@ public class downAttack : MonoBehaviour
     [SerializeField] float force = -65;
     public GameObject trigger;
     public GameObject self;
+    playerMovement move;
 
-    //private void Update()
-    //{
-    //
-    //    if (trigger.active)
-    //    {
-    //        force = 65f;
-    //    }
-    //    if (!trigger.active)
-    //    {
-    //        force = -65f;
-    //    }
-    //}
+
+
+    private void Start()
+    {
+        move = self.GetComponent<playerMovement>();
+    }
+
+
 
     private void OnCollisionEnter(Collision col)
     {

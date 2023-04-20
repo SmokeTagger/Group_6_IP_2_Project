@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class lightAttack : MonoBehaviour
@@ -25,6 +26,7 @@ public class lightAttack : MonoBehaviour
         {
             force = -40f;
         }
+
     }
 
     private void OnCollisionEnter(Collision col)
@@ -33,6 +35,7 @@ public class lightAttack : MonoBehaviour
         {
             col.gameObject.GetComponent<Rigidbody>().AddForce(20 * force,0 ,0);
             col.gameObject.GetComponent<WallDestruction>().LooseHealth();
+
         }
 
         if (col.gameObject.tag == "Player" && col.gameObject != self)
@@ -42,6 +45,7 @@ public class lightAttack : MonoBehaviour
             ph.healthlite();
             playerEnergy pe = self.GetComponent<playerEnergy>();
             pe.Energylite();
+
         }
     }
 }

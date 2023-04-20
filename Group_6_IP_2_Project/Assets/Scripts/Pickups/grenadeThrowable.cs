@@ -8,15 +8,25 @@ public class grenadeThrowable : MonoBehaviour
     float radius = 10f;
     float force = 1000f;
 
+    public GameObject musicBox;
+    public menuMusic mM;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Explode());
     }
 
+    private void Update()
+    {
+        musicBox = GameObject.FindWithTag("Music");
+        mM = musicBox.GetComponent<menuMusic>();
+    }
+
     public IEnumerator Explode() // largly the same IEnumerator as above but with out the initial timer so it starts detonating as soon as the funtion is called 
     {
         yield return new WaitForSeconds(3f);
+        mM.PlayGrenade();
         explotion.gameObject.SetActive(true);
         Collider[] objectsHit = Physics.OverlapSphere(transform.position, radius);
         foreach (Collider hit in objectsHit)

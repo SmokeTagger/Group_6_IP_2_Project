@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class superAttack : MonoBehaviour
 {
-    [SerializeField] float force = -1600;
+    [SerializeField] float force;
     public GameObject trigger;
     public GameObject self;
 
