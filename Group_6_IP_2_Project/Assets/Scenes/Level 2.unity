@@ -3961,8 +3961,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawntimer: 15
-  grenade: {fileID: 2221775079265519956, guid: d5a10a4b282ec73449c0083c132ac809, type: 3}
-  health: {fileID: 2661821153236688772, guid: 466721f197947d54196a0bb62a984cc8, type: 3}
+  grenade: {fileID: 5661144702285522937, guid: 09b4b47cf1299ec459a707b6b694bb7b, type: 3}
+  health: {fileID: 2979628564263124764, guid: ff79e182c09e3754e843db1e07c010e1, type: 3}
   thisSpawner: {fileID: 409298550}
   spawns: []
 --- !u!1 &415582726
@@ -4400,8 +4400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawntimer: 15
-  grenade: {fileID: 2221775079265519956, guid: d5a10a4b282ec73449c0083c132ac809, type: 3}
-  health: {fileID: 2661821153236688772, guid: 466721f197947d54196a0bb62a984cc8, type: 3}
+  grenade: {fileID: 5661144702285522937, guid: 09b4b47cf1299ec459a707b6b694bb7b, type: 3}
+  health: {fileID: 2979628564263124764, guid: ff79e182c09e3754e843db1e07c010e1, type: 3}
   thisSpawner: {fileID: 456824540}
   spawns: []
 --- !u!1 &459821299
@@ -6060,8 +6060,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawntimer: 15
-  grenade: {fileID: 2221775079265519956, guid: d5a10a4b282ec73449c0083c132ac809, type: 3}
-  health: {fileID: 2661821153236688772, guid: 466721f197947d54196a0bb62a984cc8, type: 3}
+  grenade: {fileID: 5661144702285522937, guid: 09b4b47cf1299ec459a707b6b694bb7b, type: 3}
+  health: {fileID: 2979628564263124764, guid: ff79e182c09e3754e843db1e07c010e1, type: 3}
   thisSpawner: {fileID: 685622338}
   spawns: []
 --- !u!1 &691406905
@@ -17839,8 +17839,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawntimer: 15
-  grenade: {fileID: 2221775079265519956, guid: d5a10a4b282ec73449c0083c132ac809, type: 3}
-  health: {fileID: 2661821153236688772, guid: 466721f197947d54196a0bb62a984cc8, type: 3}
+  grenade: {fileID: 5661144702285522937, guid: 09b4b47cf1299ec459a707b6b694bb7b, type: 3}
+  health: {fileID: 2979628564263124764, guid: ff79e182c09e3754e843db1e07c010e1, type: 3}
   thisSpawner: {fileID: 2137065832}
   spawns: []
 --- !u!1001 &3178521611165232952
@@ -17967,8 +17967,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawntimer: 15
-  grenade: {fileID: 2221775079265519956, guid: d5a10a4b282ec73449c0083c132ac809, type: 3}
-  health: {fileID: 2661821153236688772, guid: 466721f197947d54196a0bb62a984cc8, type: 3}
+  grenade: {fileID: 5661144702285522937, guid: 09b4b47cf1299ec459a707b6b694bb7b, type: 3}
+  health: {fileID: 2979628564263124764, guid: ff79e182c09e3754e843db1e07c010e1, type: 3}
   thisSpawner: {fileID: 7600219538815303211}
   spawns: []
 --- !u!1001 &7694328255258039511
