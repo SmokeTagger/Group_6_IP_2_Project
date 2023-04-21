@@ -11814,7 +11814,7 @@ MonoBehaviour:
   player1Spawn: {fileID: 1126259178}
   player2Spawn: {fileID: 249204153}
   wizardPrefab: {fileID: 4305830429750086455, guid: 9c32a3ebf948d1e4db8cc7f3ef31b701, type: 3}
-  fighterPrefab: {fileID: 1917518529097921179, guid: a10215cb681c4654f947a63ae39e9c71, type: 3}
+  fighterPrefab: {fileID: 6222534817693357062, guid: 478b5564ab681b0479127ce0ee0cc87b, type: 3}
   multiCam: {fileID: 498441548}
   P1H120: {fileID: 357314710}
   P1H100: {fileID: 645621725}
