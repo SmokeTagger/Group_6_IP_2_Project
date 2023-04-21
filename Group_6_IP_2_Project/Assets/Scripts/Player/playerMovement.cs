@@ -136,6 +136,7 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKeyDown(super))
         {
             SuperAttack();
+            canAttack = true;
         }
 
         if (Input.GetKeyDown(turn))
@@ -225,7 +226,7 @@ public class playerMovement : MonoBehaviour
 
    private void OnCollisionEnter(Collision col) // detects collision
     {
-        if(col.gameObject.tag == "Ground" ) // if player comes into contact with a objects 
+        if(col.gameObject.tag == "Ground" || col.gameObject.tag == "Destructable") // if player comes into contact with a objects 
         {
             isGrounded = true;
         }
@@ -233,7 +234,7 @@ public class playerMovement : MonoBehaviour
 
     private void OnCollisionExit(Collision col) // if object does not collide with ground tag stops character from jumping 
     {
-        if (col.gameObject.tag == "Ground" )
+        if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Destructable")
         {
             isGrounded = false;
         }
