@@ -43,7 +43,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (x < -20 && col.gameObject.tag == "Destructable" || x > 20 && col.gameObject.tag == "Destructable")
         {
-            WallDestruction wd = col.gameObject.transform.parent.gameObject.GetComponent<WallDestruction>(); // TIDY THIS SHIT UP
+            WallDestruction wd = col.gameObject.transform.parent.gameObject.GetComponent<WallDestruction>(); 
             if (wd != null)
             {
                 wd.LooseHealth();

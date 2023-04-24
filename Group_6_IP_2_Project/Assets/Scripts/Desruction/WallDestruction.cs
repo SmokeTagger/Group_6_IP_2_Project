@@ -15,20 +15,18 @@ public class WallDestruction : MonoBehaviour
     // float duration = 1.0f;
 
     Renderer rend;
-    Rigidbody rb;
     public GameObject trigger;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         rend = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //float lerp = Mathf.PingPong(Time.time, duration) / duration;
+        
 
         if (health == 3) //set the colour of the object at the start
         {
