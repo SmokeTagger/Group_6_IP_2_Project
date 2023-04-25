@@ -11,11 +11,13 @@ public class grenadeThrowable : MonoBehaviour
     public GameObject musicBox;
     public menuMusic mM;
 
-    // Start is called before the first frame update
+    // calls the explotion corortine to start the contdown
     void Start()
     {
         StartCoroutine(Explode());
     }
+
+    //update grabs the music bos to play sounds on pickup
 
     private void Update()
     {
@@ -23,7 +25,9 @@ public class grenadeThrowable : MonoBehaviour
         mM = musicBox.GetComponent<menuMusic>();
     }
 
-    public IEnumerator Explode() // largly the same IEnumerator as above but with out the initial timer so it starts detonating as soon as the funtion is called 
+    //waits for a sertain time and the uses and explotion force to apply the explosives detonation
+    //effects of the explotion are different depeneding on the tag to call the coreect scripts 
+    public IEnumerator Explode() 
     {
         yield return new WaitForSeconds(3f);
         mM.PlayGrenade();

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class menuMusic : MonoBehaviour
 {
-
+    //list of the audio sources 
     public AudioSource background;
 
     public AudioSource battle1;
@@ -27,6 +27,8 @@ public class menuMusic : MonoBehaviour
 
     public AudioSource buttonClick;
 
+    // valuse to transfer the main menu audio and brightness slider values to the next scene
+
     GameObject mainMusicSlider;
     Slider mainmusic;
     GameObject mainSFXSlider;
@@ -44,6 +46,8 @@ public class menuMusic : MonoBehaviour
 
     }
 
+    //this grabs the slider values form the main menu and carries them through to the other secens as the obnject is not destroyed on load
+
     private void Update()
     {
         mainMusicSlider = GameObject.Find("Music Volume");
@@ -59,6 +63,7 @@ public class menuMusic : MonoBehaviour
         brightnessValue = mainBrightness.value;
     }
 
+    //sereis of methods to play and stp the audo script that are called from other scripts 
     public void playBackground() { background.Play(); }
 
     public void stopBackground() { background.Stop(); }

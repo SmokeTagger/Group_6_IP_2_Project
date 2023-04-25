@@ -12,7 +12,7 @@ public class timer : MonoBehaviour
     public GameObject gameOver;
     public GameObject draw;
 
-    // Update is called once per frame
+    // runs a count down timer when the timer is active, when its not sets it timer to 0 and the throws up the game over UI
     void Update()
     {
         if (timeValue > 0)
@@ -32,6 +32,7 @@ public class timer : MonoBehaviour
         DisplayTime(timeValue);
     }
 
+    // this methos organise the time float to the correct format and the set the text in the UI to it
     void DisplayTime(float timeToDisplay)
     {
         if (timeToDisplay < 0)

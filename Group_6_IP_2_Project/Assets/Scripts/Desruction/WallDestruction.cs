@@ -21,31 +21,31 @@ public class WallDestruction : MonoBehaviour
     Renderer rend;
     public GameObject trigger;
 
-    // Start is called before the first frame update
+    // grabs the renderer to change the textures
     void Start()
     {
         rend = GetComponent<Renderer>();
         
     }
 
-    // Update is called once per frame
+    // keeping track of the health int to determine texture and destruction
     void Update()
     {
         musicBox = GameObject.FindWithTag("Music");
         mM = musicBox.GetComponent<menuMusic>();
 
-        if (health == 3) //set the colour of the object at the start
+        if (health == 3) 
         {
             rend.material = dmg1;
         }
 
-        if (health == 2) //alternates the colour btween geen and yellow when health has droped
+        if (health == 2) 
         {
             rend.material = dmg2;
 
         }
 
-        if (health == 1) //alternates the colour betweeen yellow and red when on last health point
+        if (health == 1) 
         {
             rend.material = dmg3;
             trigger.SetActive(true);
@@ -65,9 +65,10 @@ public class WallDestruction : MonoBehaviour
             }
         }
 
-        // For removeal of block while maintaining velocity switch  to trigger rather than collider. add extra inactive colider activated when health drops    
+            
     }
 
+    // method to decrease health, called from another script on collision
     public void LooseHealth()
     {
         health -= 1;

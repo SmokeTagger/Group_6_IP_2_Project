@@ -13,18 +13,20 @@ public class levelAudio : MonoBehaviour
     public Slider levelSFX;
     public Slider LevelBrightness;
 
-    // Update is called once per frame
+    // grabs the music box when carries over from the frist scene
     void Update()
     {
         musicBox = GameObject.FindWithTag("Music");
         mM = musicBox.GetComponent<menuMusic>();
     }
 
+    // method to be attached to buttons to playt the sound from the music box
     public void PlayClick() 
     {
         mM.playClick();
     }
 
+    // method to be attached to the start game buton to switch out the background music to the battle music selceted by a random number
     public void Music()
     {
 

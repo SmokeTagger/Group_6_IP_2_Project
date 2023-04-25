@@ -10,13 +10,14 @@ public class healthPickup : MonoBehaviour
     public GameObject musicBox;
     public menuMusic mM;
 
+    //update grabs the music bos to play sounds on pickup
     private void Update()
     {
         musicBox = GameObject.FindWithTag("Music");
         mM = musicBox.GetComponent<menuMusic>();
     }
 
-    // Start is called before the first frame update
+    // adds health to the player when it the activate the pick up, then removes it from the pickup list so another can spawn and destroys the pickup object
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Player")

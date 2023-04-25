@@ -7,7 +7,7 @@ public class sliderScript : MonoBehaviour
 {
     [SerializeField] private AudioMixer musicMixer;
 
-
+    //each of the methods are called by sliders to set the relevent volume level to the slider value
     public void MusicVolumeSlide(float sliderValue) 
     {
         musicMixer.SetFloat("musicVol", Mathf.Log10(sliderValue) * 20);

@@ -16,7 +16,8 @@ public class pickupSpawner : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Update runs a timer and random range so select witch cpick up to spawn and how long to wait after the pickup picked up
+    // the pick up object is instatited and then aded to a list to keep track of weather it needs to spawn another
     void Update()
     {
         if (spawns.Count < 1)
