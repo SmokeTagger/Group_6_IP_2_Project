@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
 
-    Rigidbody rb;
+    Rigidbody rb; // assigns the Rigidbody to a variable 
 
     [SerializeField] float x;
 
@@ -16,19 +16,18 @@ public class PlayerCollision : MonoBehaviour
 
     void Update()
     {
-        x = rb.velocity.x;
-
+        x = rb.velocity.x; // sets the float x to the rigidbodys x velocity 
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnCollisionEnter(Collision col) // when the object collides with another object it will run this code
     {
-        if (x < -20 && col.gameObject.tag == "Destructable" || x > 20 && col.gameObject.tag == "Destructable")
+        if (x < -20 && col.gameObject.tag == "Destructable" || x > 20 && col.gameObject.tag == "Destructable") // if the player hits an object tagged destructable but is going greater than 20 it will damage the object
         {
-            WallDestruction wd = col.gameObject.GetComponent<WallDestruction>();
+            WallDestruction wd = col.gameObject.GetComponent<WallDestruction>(); // 
 
             if (wd != null)
             {
-                wd.LooseHealth();
+                wd.LooseHealth(); // this causes the object to lose a health state damaging it 
             }
 
             MultipartDestruction md = col.gameObject.GetComponent<MultipartDestruction>();
@@ -39,7 +38,7 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerEnter(Collider col) // this function actiaves when a trigger collides with this object such as a player character
     {
         if (x < -20 && col.gameObject.tag == "Destructable" || x > 20 && col.gameObject.tag == "Destructable")
         {

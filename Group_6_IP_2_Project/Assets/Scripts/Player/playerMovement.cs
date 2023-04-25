@@ -86,25 +86,22 @@ public class playerMovement : MonoBehaviour
     // J heavy Attack
     void Update()
     {
-        musicBox = GameObject.FindWithTag("Music");
-        mM = musicBox.GetComponent<menuMusic>();
-        // Old Code 
-        //moveHorizontal = Input.GetAxisRaw("Horizontal"); // Sets input variables for horizontal and Vertical
-        //moveVertical = Input.GetAxisRaw("Vertical");
+        musicBox = GameObject.FindWithTag("Music"); // grabs the audio object tagged music 
+        mM = musicBox.GetComponent<menuMusic>(); // then grabs the menu music component assigned to the object 
 
-        jumptime += Time.deltaTime;
+        jumptime += Time.deltaTime; // keeps the timer for the jump reset contained to the real time in game 
 
-        if(jumptime > 2) 
+        if(jumptime > 2) // if the jump time is greater than 2 seconds 
         { 
-            isGrounded = true; 
+            isGrounded = true; // sets the grounded variabnle to true allowing jumping 
             jumptime = 0;
         }
 
-        if (Input.GetKeyDown(light) && canAttack)
+        if (Input.GetKeyDown(light) && canAttack) // if assigned attack button is pressed the character will attack if variable can attack is true
         {
-            lightAttack(); 
+            lightAttack(); // activates the assigned attack function 
 
-            if(wizard) 
+            if(wizard) // plays diffrent animation depending on which character the player is using
             { 
                 mM.PlayWizardSwing(); 
             }
@@ -114,11 +111,11 @@ public class playerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(heavy) && canAttack)
+        if (Input.GetKeyDown(heavy) && canAttack) // if assigned attack button is pressed the character will attack if variable can attack is true
         {
-            heavyAttack();
+            heavyAttack(); // activates the assigned attack function
 
-            if (wizard)
+            if (wizard) // plays diffrent animation depending on which character the player is using
             {
                 mM.PlayWizardSwing();
             }
@@ -128,13 +125,13 @@ public class playerMovement : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(down) && canAttack)
+        if(Input.GetKeyDown(down) && canAttack) // if assigned attack button is pressed the character will attack if variable can attack is true
         {
-            downAttack();
+            downAttack(); // activates the assigned attack function
 
-            if (wizard)
+            if (wizard) // plays diffrent animation depending on which character the player is using
             {
-                mM.PlayWizardSwing();
+                mM.PlayWizardSwing(); 
             }
             else
             {
@@ -148,10 +145,10 @@ public class playerMovement : MonoBehaviour
             canAttack = true;
         }
 
-        if (Input.GetKeyDown(turn))
+        if (Input.GetKeyDown(turn)) // this functions allows the character to be manually turned around 
         {
             transform.Rotate(Vector3.up * 180);
-            facing = !facing;
+            facing = !facing; // keeps track of where the character is facing for the hit boxes 
         }
 
         if (Input.GetKeyDown(throwable)) 
@@ -159,7 +156,7 @@ public class playerMovement : MonoBehaviour
             if (grenade) 
             {
                 throwGrenade();
-                grenade = false;
+                grenade = false; // disables the ability to thrown a granade 
 
                 if (wizard)
                 {
@@ -182,7 +179,7 @@ public class playerMovement : MonoBehaviour
             trigger.SetActive(false);
         }
 
-        if (grenade) 
+        if (grenade) // this us used to activate the Granade indicator to let the player know if they are holding a granade 
         { 
             grenadeMarker.SetActive(true);
         }
@@ -191,10 +188,10 @@ public class playerMovement : MonoBehaviour
             grenadeMarker.SetActive(false);
         }
 
-        playerEnergy pe = GetComponent<playerEnergy>();
+        playerEnergy pe = GetComponent<playerEnergy>(); // grabs energy component 
         if (pe.activeSuper == true) 
         { 
-            SatkMarker.SetActive(true);
+            SatkMarker.SetActive(true); // lets player know if they have the energy to activate the super attack
         }
         else 
         {
@@ -228,9 +225,6 @@ public class playerMovement : MonoBehaviour
 
         }
 
-        // Add a wall slide and wall jump 
-
-        // Add a dash 
     }
 
    private void OnCollisionEnter(Collision col) // detects collision
@@ -249,6 +243,7 @@ public class playerMovement : MonoBehaviour
         }
     }
 
+    // this list of method are used to activate the assigned Coroutines for all the attacks 
     private void lightAttack()
     {
         StartCoroutine(lAttack());
@@ -272,14 +267,14 @@ public class playerMovement : MonoBehaviour
 
     private IEnumerator lAttack()
     {
-        canAttack = false;
+        canAttack = false; // sets the players ability to attack to false 
         baseModle.SetActive(false);
-        Latk.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
+        Latk.SetActive(true); // allowing the animation to appear 
+        yield return new WaitForSeconds(0.1f); // this is used to lengthen the attack to allow animations to play 
         Latk.SetActive(false);
         baseModle.SetActive(true) ;
-        yield return new WaitForSeconds(0.2f);
-        canAttack = true;
+        yield return new WaitForSeconds(0.2f); // waits a moment before allowing the player to attack again 
+        canAttack = true; // rsets the players abilitiy to attack
     }
 
     private IEnumerator hAttack()
@@ -319,7 +314,7 @@ public class playerMovement : MonoBehaviour
     private IEnumerator sAttack()
     {
         playerEnergy pe = GetComponent<playerEnergy>();
-        if (pe.activeSuper == true)
+        if (pe.activeSuper == true) // the active super variable must be true to allow this attack to start 
         {
             canAttack = false;
             yield return new WaitForSeconds(0.5f);
@@ -329,7 +324,7 @@ public class playerMovement : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             Satk.SetActive(false);
             baseModle.SetActive(true) ;
-            pe.EnergyReset();
+            pe.EnergyReset(); // sets the energy of the attack to zero 
             yield return new WaitForSeconds(0.2f);
             canAttack = true;
         }

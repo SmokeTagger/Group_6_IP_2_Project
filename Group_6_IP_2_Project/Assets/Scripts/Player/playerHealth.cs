@@ -6,25 +6,27 @@ using UnityEngine;
 public class playerHealth : MonoBehaviour
 {
     public int health = 120;
-    public TextMeshProUGUI healthmeter;
-    public GameObject player;
+    public TextMeshProUGUI healthmeter; // grabs the UI text element 
+    public GameObject player; // grabs player object 
     playerMovement pM;
 
-    public GameObject H120;
+    public GameObject H120; // These are the diffrent segments of health 
     public GameObject H100;
     public GameObject H80;
     public GameObject H60;
     public GameObject H40;
     public GameObject H20;
 
-    public GameObject gameOver;
+    // End screen game objects
+    public GameObject gameOver; 
     public GameObject winner;
 
+    // music game objects
     public GameObject musicBox;
     public menuMusic mM;
     void Start()
     {
-        healthmeter.text = player.name + " Health : " + health;
+        healthmeter.text = player.name + " Health : " + health; // old code
 
     }
     
@@ -35,7 +37,8 @@ public class playerHealth : MonoBehaviour
         mM = musicBox.GetComponent<menuMusic>();
         pM = player.GetComponent<playerMovement>();
 
-        if (health == 120) 
+        // this segment of code controls what parts of the health bar appear and what ones are disabled 
+        if (health == 120) // these are controlled by settign each stage from true to false
         {
             H120.SetActive(true);
             H100.SetActive(false);
@@ -89,17 +92,18 @@ public class playerHealth : MonoBehaviour
             H40.SetActive(false);
             H20.SetActive(true);
         }
-        if (health <= 0)
+        if (health <= 0) // if their is no health on the player
         {
-            Destroy(gameObject);
-            Time.timeScale = 0;
-            gameOver.SetActive(true);
+            Destroy(gameObject); // destoryed the assigned hame object
+            Time.timeScale = 0; // set time to 0
+            gameOver.SetActive(true); // activate the game over screen
             winner.SetActive(true);
         }
 
 
     } 
 
+    // these code segments control what attakcks are played and how much damage each attack does 
     public void healthlite()
     {
         health -= 20;
