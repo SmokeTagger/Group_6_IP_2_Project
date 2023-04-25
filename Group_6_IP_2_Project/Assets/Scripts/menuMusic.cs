@@ -23,6 +23,7 @@ public class menuMusic : MonoBehaviour
     public AudioSource grenade;
     public AudioSource healthUp;
     public AudioSource pickUp;
+    public AudioSource breakup;
 
     public AudioSource buttonClick;
 
@@ -95,4 +96,6 @@ public class menuMusic : MonoBehaviour
     public void PlayHealthUp() { healthUp.Play(); }
 
     public void PlayPickUp() { pickUp.Play(); }
+
+    public void PlayBreakUp() { breakup.Play(); }
 }

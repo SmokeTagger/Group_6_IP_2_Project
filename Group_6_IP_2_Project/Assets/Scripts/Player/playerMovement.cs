@@ -63,6 +63,8 @@ public class playerMovement : MonoBehaviour
     menuMusic mM;
     public bool wizard;
 
+    float jumptime = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,6 +92,13 @@ public class playerMovement : MonoBehaviour
         //moveHorizontal = Input.GetAxisRaw("Horizontal"); // Sets input variables for horizontal and Vertical
         //moveVertical = Input.GetAxisRaw("Vertical");
 
+        jumptime += Time.deltaTime;
+
+        if(jumptime > 2) 
+        { 
+            isGrounded = true; 
+            jumptime = 0;
+        }
 
         if (Input.GetKeyDown(light) && canAttack)
         {
